@@ -1,5 +1,5 @@
 """Create a ChatVectorDBChain for question/answering."""
-from langchain.callbacks.base import AsyncCallbackManager
+from langchain.callbacks.base import AsyncCallbackHandler
 from langchain.callbacks.tracers import LangChainTracer
 from langchain.chains import ChatVectorDBChain
 from langchain.chains.chat_vector_db.prompts import (CONDENSE_QUESTION_PROMPT,
@@ -16,9 +16,9 @@ def get_chain(
     """Create a ChatVectorDBChain for question/answering."""
     # Construct a ChatVectorDBChain with a streaming llm for combine docs
     # and a separate, non-streaming llm for question generation
-    manager = AsyncCallbackManager([])
-    question_manager = AsyncCallbackManager([question_handler])
-    stream_manager = AsyncCallbackManager([stream_handler])
+    manager = AsyncCallbackHandler([])
+    question_manager = AsyncCallbackHandler([question_handler])
+    stream_manager = AsyncCallbackHandler([stream_handler])
     if tracing:
         tracer = LangChainTracer()
         tracer.load_default_session()

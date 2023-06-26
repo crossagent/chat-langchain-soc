@@ -1,0 +1,1 @@
+C:\Users\zhouxy\Anaconda3\envs\chatknowbase\Scripts\uvicorn.exe main:app
