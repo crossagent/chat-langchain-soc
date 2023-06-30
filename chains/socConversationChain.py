@@ -44,4 +44,5 @@ class SocConversationChain(LLMChain):
                 "conversation_history",
             ],
         )
+
         return cls(prompt=prompt, llm=llm, verbose=verbose)

@@ -1,5 +1,7 @@
 from langchain.chat_models import ChatOpenAI
 from agents.soc_gpt_agent import SocGPT
+from langchain.callbacks.base import  AsyncCallbackHandler
+from langchain.callbacks.manager import  AsyncCallbackManager
 
 # Set up of your agent
 
@@ -33,11 +35,17 @@ config = dict(
     ),
 )
 
-llm = ChatOpenAI(temperature=0.9)
+def get_soc_chain(
+    question_handler:AsyncCallbackHandler = None, stream_handler:AsyncCallbackHandler = None, tracing: bool = False
+) -> SocGPT:
+    """Get the chain."""
+    # init llm
+    steam_manager = AsyncCallbackManager([stream_handler])
+    llm = ChatOpenAI(temperature=0, streaming=True, callback_manager=steam_manager)
 
-soc_agent = SocGPT.from_llm(llm, verbose=False, **config)
+    soc_agent = SocGPT.from_llm(llm, verbose=False, **config)
 
-# init sales agent
-soc_agent.seed_agent()
+    # init sales agent
+    soc_agent.seed_agent()
 
-soc_agent.determine_conversation_stage()
+    return soc_agent

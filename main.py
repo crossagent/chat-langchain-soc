@@ -1,6 +1,5 @@
 """Main entrypoint for the app."""
 import logging
-import pickle
 from pathlib import Path
 from typing import Optional
 
@@ -8,11 +7,12 @@ from fastapi import FastAPI, Request, WebSocket, WebSocketDisconnect
 from fastapi.templating import Jinja2Templates
 from langchain.vectorstores import VectorStore
 
-from callback import QuestionGenCallbackHandler, StreamingLLMCallbackHandler
+from callbacks.callback import QuestionGenCallbackHandler, StreamingLLMCallbackHandler
+from callbacks.socCallBacks import QuestionGenSocCallbackHandler, StreamingSocLLMCallbackHandler
 from query_data import get_chain
 from schemas import ChatResponse
 
-from chat import soc_agent
+from chat import get_soc_chain
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
@@ -80,11 +80,14 @@ async def websocket_endpoint(websocket: WebSocket):
 @app.websocket("/chatSoc")
 async def websocket_endpoint_soc(websocket: WebSocket):
     await websocket.accept()
-    question_handler = QuestionGenCallbackHandler(websocket)
-    stream_handler = StreamingLLMCallbackHandler(websocket)
-    chat_history = []
+
+    print("run chatsoc")
+
+    question_handler = QuestionGenSocCallbackHandler(websocket)
+    stream_handler = StreamingSocLLMCallbackHandler(websocket)
 
     #soc_agent from chat.py
+    soc_agent = get_soc_chain(question_handler, stream_handler)
 
     while True:
         try:
@@ -92,19 +95,19 @@ async def websocket_endpoint_soc(websocket: WebSocket):
             question = await websocket.receive_text()
             resp = ChatResponse(sender="you", message=question, type="stream")
             await websocket.send_json(resp.dict())
-
+            
             # Construct a response
             start_resp = ChatResponse(sender="bot", message="", type="start")
             await websocket.send_json(start_resp.dict())
+            soc_agent.human_step(question)
 
-            result = await soc_agent.acall(
-                {"question": question, "chat_history": chat_history}
+            print("before astep")
+            result = await soc_agent.astep(
+                {"question": question}
             )
-            chat_history.append((question, result["text"]))
+            print("after astep")
 
-            logging.log("answer is" + result['text'])
-
-            end_resp = ChatResponse(sender="bot", message=result["text"], type="end")
+            end_resp = ChatResponse(sender="bot", message="", type="end")
             await websocket.send_json(end_resp.dict())
         except WebSocketDisconnect:
             logging.info("websocket disconnect")

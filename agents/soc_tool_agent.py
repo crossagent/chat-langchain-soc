@@ -4,9 +4,9 @@ from langchain.agents import (
 )
 from langchain import OpenAI, LLMChain
 from typing import List, Union
-from chains.tooslsOutputParser import ToolsOutputParser
+from outputParser.tooslsOutputParser import ToolsOutputParser
 from prompts.prompt import (CustomPromptTemplate, template)
-from tools.toolRetriever import get_tools
+from retrievers.toolRetriever import get_tools
 
 
 llm = OpenAI(temperature=0)
