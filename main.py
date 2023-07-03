@@ -8,7 +8,7 @@ from fastapi.templating import Jinja2Templates
 from langchain.vectorstores import VectorStore
 
 from callbacks.callback import QuestionGenCallbackHandler, StreamingLLMCallbackHandler
-from callbacks.socCallBacks import QuestionGenSocCallbackHandler, StreamingSocLLMCallbackHandler
+from callbacks.socWebCallBacks import QuestionGenSocCallbackHandler, StreamingSocLLMCallbackHandler
 from query_data import get_chain
 from schemas import ChatResponse
 
@@ -99,12 +99,9 @@ async def websocket_endpoint_soc(websocket: WebSocket):
             # Construct a response
             start_resp = ChatResponse(sender="bot", message="", type="start")
             await websocket.send_json(start_resp.dict())
-            soc_agent.human_step(question)
 
             print("before astep")
-            result = await soc_agent.astep(
-                {"question": question}
-            )
+            result = await soc_agent.run(question)
             print("after astep")
 
             end_resp = ChatResponse(sender="bot", message="", type="end")

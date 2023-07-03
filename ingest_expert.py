@@ -18,7 +18,7 @@ docs = [
 
 def ingest_expert():
     """Get documents from web pages."""
-    initPinecone()
+    pinecone = initPinecone()
 
     index = pinecone.Index("rules")
     delete_response = index.delete(deleteAll='true', namespace="experts")

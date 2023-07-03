@@ -4,22 +4,21 @@ from langchain.memory import ConversationBufferMemory
 from langchain import OpenAI
 from langchain.agents import initialize_agent
 from tools.tools import ALL_TOOLS
-from soc_question_agent import agent_executor
+from agents.soc_question_agent import get_question_agent
 
 memory = ConversationBufferMemory(memory_key="chat_history")
 
-tools = [
+
+def get_agent(llm, verbose=False, callback_manager=None):
+    question_agent = get_question_agent(llm, verbose=verbose, callback_manager=callback_manager)
+
+    tools = [
     Tool(
         name=f"Problem solving helper",
-        func=agent_executor.run,
+        func=question_agent.run,
         description=f"help developer to solve problem during soc game development",
     )
-]
+    ]
 
-llm=OpenAI(temperature=0)
-agent_chain = initialize_agent(tools, llm, agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, verbose=True, memory=memory)
-
-def get_agent():
+    agent_chain = initialize_agent(tools, llm, agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, verbose=verbose, memory=memory)
     return agent_chain
-
-agent_chain.run("我的狙击枪无法射击了")

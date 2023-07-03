@@ -12,6 +12,11 @@ from langchain.chat_models import ChatOpenAI
 from langchain.agents import AgentType
 from langchain.memory import ConversationBufferWindowMemory
 
+# 问题模板
+# 提问中关于玩家当前的描述，要包含{职业}{正在执行的任务}{遇到的问题详细描述}{需要的帮助类型}
+# 首先你需要明确问题，output回答中需要包含json格式的内容
+# 根据分析，tools中包含所有的问题模块，你的问题属于XX模块，正在查询相关模块的信息
+
 def get_input() -> str:
     print("Insert your text. Enter 'q' or press Ctrl-D (or Ctrl-Z on Windows) to end.")
     contents = []
