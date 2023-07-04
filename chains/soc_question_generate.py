@@ -85,10 +85,14 @@ def runTest():
     finalquestion = agent.run(question = "狙击枪坏掉了")
     print(finalquestion)
 
+    from agents.soc_module_dispatch_agent import get_module_dispatch_agent
+
+    expert = get_module_dispatch_agent(llm, verbose=True)
+    
+    answer = expert.run(finalquestion)
+
     finalquestion = agent.run(question = "另外人也没法跑步了")
     print(finalquestion)
-
-    from agents.soc_module_dispatch_agent import get_module_dispatch_agent
 
     expert = get_module_dispatch_agent(llm, verbose=True)
     
