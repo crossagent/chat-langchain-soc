@@ -12,11 +12,6 @@ from langchain.chat_models import ChatOpenAI
 from langchain.agents import AgentType
 from langchain.memory import ConversationBufferWindowMemory
 
-# 问题模板
-# 提问中关于玩家当前的描述，要包含{职业}{正在执行的任务}{遇到的问题详细描述}{需要的帮助类型}
-# 首先你需要明确问题，output回答中需要包含json格式的内容
-# 根据分析，tools中包含所有的问题模块，你的问题属于XX模块，正在查询相关模块的信息
-
 def get_input() -> str:
     print("Insert your text. Enter 'q' or press Ctrl-D (or Ctrl-Z on Windows) to end.")
     contents = []
@@ -36,14 +31,14 @@ tools = [
     Tool(
         name="HumanInput",
         func=human.run,
-        description="useful for when you need to find the perpose of the question"
+        description="useful for when you need to find the perpose of the question and usrs expectation for help"
     )
 ]
 
 # Set up the base template
-template_with_history = """You are an AI assistant, helping people to solve problem during game development work. \
+template_with_history = """You are a problem definition assistant, and you will summarize the user's question, which includes the user's profession, current task, the problem they encountered, and their expectation for help through chat.
 
-The questioner is a {profession}, You need to clarify the user's problem through tools, the task the user is performing, and the type of help the user needs.
+User profession :{profession} 
 
 You have access to the following tools:
 
@@ -52,13 +47,13 @@ You have access to the following tools:
 Use the following format:
 
 Question: the input question you must answer
-Thought: you should always think about what to do
+Thought: do i know the user's profession, current task, the problem they encountered, and their expectation for help
 Action: the action to take, should be one of [{tool_names}]
-Action Input in chinese: the input to the action
+Action Input: the input to the action
 Observation: the result of the action
-... (this Thought/Action/Action Input/Observation can repeat N times)
+... (this Thought/Action/Action Input/Observation c+an repeat N times)
 Thought: I now know the final answer
-Final Answer: the final answer to the original input question
+Final Answer: rephrase the user question to be a standalone question in chinese from previous conversation history.
 
 Begin! Remember to speak in chinese when giving your Action Input and final answer.
 
@@ -70,6 +65,32 @@ New question: {input}
 
 # Set up a prompt template
 class QuestionPromptTemplate(StringPromptTemplate):
+    # The template to use
+    template: str
+    # The list of tools available
+    tools: List[Tool]
+    # The profession of the user
+    profession : str
+
+
+    def format(self, **kwargs) -> str:
+        # Get the intermediate steps (AgentAction, Observation tuples)
+        # Format them in a particular way
+        intermediate_steps = kwargs.pop("intermediate_steps")
+        thoughts = ""
+        for action, observation in intermediate_steps:
+            thoughts += action.log
+            thoughts += f"\nObservation: {observation}\nThought: "
+        # Set the agent_scratchpad variable to that value
+        kwargs["agent_scratchpad"] = thoughts
+        # Create a tools variable from the list of tools provided
+        kwargs["tools"] = "\n".join([f"{tool.name}: {tool.description}" for tool in self.tools])
+        # Create a list of tool names for the tools provided
+        kwargs["tool_names"] = ", ".join([tool.name for tool in self.tools])
+        # Add the profession to the kwargs
+        kwargs["profession"] = self.profession
+        tmplstr = self.template.format(**kwargs)
+        return tmplstr
     # The template to use
     template: str
     # The list of tools available
@@ -109,7 +130,7 @@ class QuestionOutputParser(AgentOutputParser):
                 log=llm_output,
             )
         # Parse out the action and action input
-        regex = r"Action\s*\d*\s*:(.*?)\nAction\s*\d*\s*Input\s*\d*\s*in\s*chinese\s*:[\s]*(.*)"
+        regex = r"Action\s*\d*\s*:(.*?)\nAction\s*\d*\s*Input\s*\d*\s*:[\s]*(.*)"
         match = re.search(regex, llm_output, re.DOTALL)
         if not match:
             raise OutputParserException(f"Could not parse LLM output: `{llm_output}`")
@@ -154,29 +175,29 @@ def get_question_agent(llm,
 
     return agent_executor
 
-async def runTest():
+def runTest():
     from callbacks.socConsoleCallBacks import QuestionGenCallbackHandler
-    from langchain.callbacks.manager import AsyncCallbackManager
+    from langchain.callbacks.manager import BaseCallbackManager
     
-    llm = ChatOpenAI()
+    llm = ChatOpenAI(temperature=0)
 
     config = {"profession" : "game developer"}
 
     questionhandler = QuestionGenCallbackHandler()
-    questionMgr = AsyncCallbackManager([questionhandler])
+    questionMgr = BaseCallbackManager([questionhandler])
     agent = get_question_agent(llm, verbose=True, callback_manager=questionMgr, **config)
     
-    finalquestion = await agent.arun("狙击枪坏掉了")
+    finalquestion = agent.run("狙击枪坏掉了")
 
     print(finalquestion)
 
-    from soc_module_expert_agent import get_expert_answer
+    from agents.soc_module_dispatch_agent import get_expert_answer
 
     expert = get_expert_answer(llm)
     
-    answer = await expert.arun(finalquestion)
+    answer = expert.run(finalquestion)
 
     print(answer)
 
-import asyncio
-result = asyncio.run(runTest())
+if __name__ == "__main__":
+    runTest()

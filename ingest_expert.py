@@ -7,7 +7,7 @@ from langchain.vectorstores.faiss import FAISS
 from retrievers.pineconeclient import initPinecone
 from langchain.vectorstores.pinecone import Pinecone
 from langchain.schema import Document
-from tools.tools import ALL_TOOLS
+from tools.modeleInfo import ALL_TOOLS
 import pinecone
 
 docs = [

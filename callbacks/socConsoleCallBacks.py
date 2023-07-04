@@ -1,7 +1,7 @@
 """Callback handlers used in the app."""
 from typing import Any, Dict, List
 
-from langchain.callbacks.base import AsyncCallbackHandler
+from langchain.callbacks.base import AsyncCallbackHandler, BaseCallbackHandler
 
 from schemas import ChatResponse
 
@@ -12,10 +12,10 @@ class StreamingLLMCallbackHandler(AsyncCallbackHandler):
         print(token)
 
 
-class QuestionGenCallbackHandler(AsyncCallbackHandler):
+class QuestionGenCallbackHandler(BaseCallbackHandler):
     """Callback handler for question generation."""
 
-    async def on_chain_start(
+    def on_chain_start(
         self,
         serialized: Dict[str, Any],
         inputs: Dict[str, Any],
@@ -24,19 +24,10 @@ class QuestionGenCallbackHandler(AsyncCallbackHandler):
         """Run when a chat model starts running."""
         print("question generation start")
 
-    async def on_chain_end(
+    def on_chain_end(
         self,
         outputs: Dict[str, Any],
         **kwargs: Any,
     ) -> None:
         """Run when chain ends running."""
         print("start new chain")
-
-        
-    async def on_llm_start(
-        self, serialized: Dict[str, Any], 
-        prompts: List[str], 
-        **kwargs: Any,
-    ) -> None:
-        """Run when LLM starts running."""
-        print("question generation start")
