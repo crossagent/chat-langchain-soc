@@ -17,7 +17,7 @@ prompt_template = """Use the following pieces of context to answer the question 
 {context}
 
 Question: {question}
-Answer in Chinese:"""
+Answer:"""
 PROMPT = PromptTemplate(
     template=prompt_template, input_variables=["context", "question"]
 )
@@ -34,7 +34,7 @@ class RetrievalQACallBack(BaseCallbackHandler):
     ) -> Any:
         """Run when chain starts running."""
 
-        print(f"在咨询接口人之前，我会在知识库中进一步为您查询相关信息，帮助你解决问题。")
+        print(f"除了咨询接口人信息，我会在知识库中进一步为您查询相关信息，帮助你解决问题。")
 
 def get_expert_answer(llm, verbose = False) ->RetrievalQA:
     qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=get_retriver(), 

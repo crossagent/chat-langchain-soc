@@ -80,21 +80,17 @@ def runTest():
     questionMgr = BaseCallbackManager([questionhandler])
     #agent = get_question_generate(llm, verbose=True, callback_manager=questionMgr)
     
-    agent = QuestionGenerateChain.from_llm(llm, verbose=True, callbacks=questionMgr)
+    agent = QuestionGenerateChain.from_llm(llm, verbose=False, callbacks=questionMgr)
 
-    finalquestion = agent.run(question = "狙击枪坏掉了")
-    print(finalquestion)
+    print("请输入提问：")
+    question = input()
+    finalquestion = agent.run(question)
+
+    print("正在根据问题寻找合适的专家模块...")
 
     from agents.soc_module_dispatch_agent import get_module_dispatch_agent
 
-    expert = get_module_dispatch_agent(llm, verbose=True)
-    
-    answer = expert.run(finalquestion)
-
-    finalquestion = agent.run(question = "另外人也没法跑步了")
-    print(finalquestion)
-
-    expert = get_module_dispatch_agent(llm, verbose=True)
+    expert = get_module_dispatch_agent(llm, verbose=False)
     
     answer = expert.run(finalquestion)
 

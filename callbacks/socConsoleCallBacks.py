@@ -22,7 +22,7 @@ class QuestionGenCallbackHandler(BaseCallbackHandler):
         **kwargs: Any,
     ) -> None:
         """Run when a chat model starts running."""
-        print("question generation start")
+        print("正在收集对话信息，生成问题...")
 
     def on_chain_end(
         self,
@@ -30,4 +30,4 @@ class QuestionGenCallbackHandler(BaseCallbackHandler):
         **kwargs: Any,
     ) -> None:
         """Run when chain ends running."""
-        print("start new chain")
+        print(f"您的问题可以描述为：{outputs['text']}")
