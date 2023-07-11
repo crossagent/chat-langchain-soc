@@ -1,0 +1,7 @@
+The winning times for the Boston Marathon for the past 5 years are as follows:
+- 2022: Evans Chebet, Kenya, 2:05:54
+- 2021: Benson Kipruto, Kenya, 2:09:51
+- 2019: Lawrence Cherono, Kenya, 2:07:57
+- 2018: Yuki Kawauchi, Japan, 2:15:58
+- 2017: Geoffrey Kirui, Kenya, 2:09:37
+SOURCES: https://www.baa.org/races/boston-marathon/results/champions

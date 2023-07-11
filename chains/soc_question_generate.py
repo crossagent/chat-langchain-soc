@@ -74,7 +74,7 @@ def runTest():
     from callbacks.socConsoleCallBacks import QuestionGenCallbackHandler
     from langchain.callbacks.manager import BaseCallbackManager
     
-    llm = ChatOpenAI(temperature=0)
+    llm = ChatOpenAI(temperature=0, model="gpt-4")
 
     questionhandler = QuestionGenCallbackHandler()
     questionMgr = BaseCallbackManager([questionhandler])

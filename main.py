@@ -8,11 +8,11 @@ from fastapi.templating import Jinja2Templates
 from langchain.vectorstores import VectorStore
 
 from callbacks.callback import QuestionGenCallbackHandler, StreamingLLMCallbackHandler
-from callbacks.socWebCallBacks import QuestionGenSocCallbackHandler, StreamingSocLLMCallbackHandler
+from callbacks.socWebCallBacks import StreamSocLLMCallbackHandler
 from query_data import get_chain
 from schemas import ChatResponse
 
-from chat import get_soc_chain
+from agents.rustserver_cmd_agent import get_rust_server_cmd_gpt
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
@@ -83,11 +83,11 @@ async def websocket_endpoint_soc(websocket: WebSocket):
 
     print("run chatsoc")
 
-    question_handler = QuestionGenSocCallbackHandler(websocket)
-    stream_handler = StreamingSocLLMCallbackHandler(websocket)
+    stream_handler = StreamSocLLMCallbackHandler(websocket)
 
     #soc_agent from chat.py
-    soc_agent = get_soc_chain(question_handler, stream_handler)
+    config = {"stream_handler" : stream_handler, "websocket" : websocket}
+    soc_agent = get_rust_server_cmd_gpt(**config)
 
     while True:
         try:
@@ -96,16 +96,19 @@ async def websocket_endpoint_soc(websocket: WebSocket):
             resp = ChatResponse(sender="you", message=question, type="stream")
             await websocket.send_json(resp.dict())
             
+            result = await soc_agent.arun(question.strip())
+
             # Construct a response
             start_resp = ChatResponse(sender="bot", message="", type="start")
             await websocket.send_json(start_resp.dict())
 
-            print("before astep")
-            result = await soc_agent.run(question)
-            print("after astep")
+            # 发送最终的询问结果
+            result_resp = ChatResponse(sender="bot", message="运行结束:" + result, type="stream")
+            await websocket.send_json(result_resp.dict())
 
+            # 结束对话
             end_resp = ChatResponse(sender="bot", message="", type="end")
-            await websocket.send_json(end_resp.dict())
+            await websocket.send_json(end_resp.dict()) 
         except WebSocketDisconnect:
             logging.info("websocket disconnect")
             break
@@ -117,6 +120,7 @@ async def websocket_endpoint_soc(websocket: WebSocket):
                 type="error",
             )
             await websocket.send_json(resp.dict())
+
 
 if __name__ == "__main__":
     import uvicorn

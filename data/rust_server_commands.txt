@@ -1,0 +1,1 @@
+To add a monster to a Rust server, you can use the 'spawn entity' command. This command spawns an entity where the player is looking. If the entity name inputted is not found, you are given choices. SOURCES: https://wiki.facepunch.com/rust/useful_commands

@@ -11,6 +11,11 @@ class StreamingLLMCallbackHandler(AsyncCallbackHandler):
     async def on_llm_new_token(self, token: str, **kwargs: Any) -> None:
         print(token)
 
+class StreamLLMCallbackHandler(BaseCallbackHandler):
+    """Callback handler for streaming LLM responses."""
+
+    def on_llm_new_token(self, token: str, **kwargs: Any) -> None:
+        print(token, end="")    
 
 class QuestionGenCallbackHandler(BaseCallbackHandler):
     """Callback handler for question generation."""
