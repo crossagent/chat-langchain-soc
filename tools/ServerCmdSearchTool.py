@@ -1,3 +1,4 @@
+import json
 import nest_asyncio
 import asyncio
 from langchain.agents import tool
@@ -24,6 +25,24 @@ async def async_load_playwright(url: str) -> str:
 
             for script in soup(["script", "style"]):
                 script.extract()
+
+            # 找到目标table节点
+            markdown_node = soup.find('div', {'class': 'markdown', 'id': 'pagecontent'})
+            table = markdown_node.find('table')
+
+            # 获取表头行
+            header_row = table.find('tr')
+
+            # 获取所有数据行
+            data_rows = table.find_all('tr')[1:]  # 假设第一行是表头行
+
+            # 遍历每个字段，并添加表头和冒号
+            for row in data_rows:
+                cells = row.find_all('td')
+                for i, cell in enumerate(cells):
+                    header_text = header_row.find_all('th')[i].get_text()
+                    text = cell.get_text().strip()
+                    cell.string = f"{header_text}: {text}"
 
             text = soup.get_text()
             lines = (line.strip() for line in text.splitlines())
@@ -73,10 +92,13 @@ class SeverGmCmdTool(BaseTool):
         default_factory=_get_text_splitter
     )
     qa_chain: BaseCombineDocumentsChain
+    summary_chain: BaseCombineDocumentsChain
 
     def _run(self, url: str, question: str) -> str:
         """Useful for browsing websites and scraping the text information."""
         url = "https://wiki.facepunch.com/rust/useful_commands"
+        #url = "https://www.corrosionhour.com/rust-admin-commands/"
+        
         result = browse_web_page.run(url)
         docs = [Document(page_content=result, metadata={"source": url})]
         web_docs = self.text_splitter.split_documents(docs)
@@ -89,14 +111,38 @@ class SeverGmCmdTool(BaseTool):
                 {"input_documents": input_docs, "question": question},
                 return_only_outputs=True,
             )
+            print(window_result)
             results.append(f"Response from window {i} - {window_result}")
         results_docs = [
             Document(page_content="\n".join(results), metadata={"source": url})
         ]
-        return self.qa_chain(
+        return self.summary_chain(
             {"input_documents": results_docs, "question": question},
             return_only_outputs=True,
         )
 
     async def _arun(self, url: str, question: str) -> str:
         raise NotImplementedError
+    
+
+if __name__ == "__main__":
+    import asyncio
+
+    llm_lookup = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613", verbose= True)
+    #llm_lookup = ChatOpenAI(temperature=0, model="gpt-4")
+
+    from prompts.search_prompt import PROMPT as SEARCH_PROMPT
+    qa_config = {"prompt" : SEARCH_PROMPT}
+    #qa_config = {}
+    qa_chain= load_qa_with_sources_chain(llm_lookup, **qa_config)
+
+    from prompts.summary_prompt import PROMPT as SUMMARY_PROMPT
+    summary_config = {"prompt" : SUMMARY_PROMPT}
+    summary_chain = load_qa_with_sources_chain(llm_lookup, **summary_config)
+
+    query_rust_tool = SeverGmCmdTool(qa_chain = qa_chain, summary_chain = summary_chain, verbose = True)
+
+    input = json.loads('{ "url": "https://rust.facepunch.com/", "question": "如何查询我的坐标" }')
+    observation = query_rust_tool.run(input)
+
+    print(observation)

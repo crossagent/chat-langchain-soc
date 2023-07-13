@@ -44,7 +44,7 @@ class ChainSocCallbackHandler(BaseCallbackHandler):
         start_resp = ChatResponse(sender="bot", message="", type="start")
         asyncio.run(self.websocket.send_json(start_resp.dict()))
 
-        stream_resp = ChatResponse(sender="bot", message="我开始思考，并制定计划。\n", type="stream")
+        stream_resp = ChatResponse(sender="bot", message="我开始思考，并制定计划。</br>", type="stream")
         asyncio.run(self.websocket.send_json(stream_resp.dict()))
 
 
@@ -54,6 +54,18 @@ class ChainSocCallbackHandler(BaseCallbackHandler):
         **kwargs: Any,
     ) -> None:
         """结束的时候把回答中的speak字段输出"""
+        # 获取 thoughts 下的 speak 字段的值
+        json_data = json.loads(outputs['text'])
+        
+        thoughts = json_data["thoughts"]["text"]
+        reasoning = json_data["thoughts"]["reasoning"]
+
+        stream_resp = ChatResponse(sender="bot", message=f"我想：{thoughts} + </br>", type="stream")
+        #asyncio.run(self.websocket.send_json(stream_resp.dict()))  
+
+        stream_resp = ChatResponse(sender="bot", message=f"原因：{reasoning} + </br>", type="stream")
+        #asyncio.run(self.websocket.send_json(stream_resp.dict()))  
+
         # 首先结束当前的对话
         end_resp = ChatResponse(sender="bot", message="", type="end")
         asyncio.run(self.websocket.send_json(end_resp.dict())) 
@@ -62,8 +74,6 @@ class ChainSocCallbackHandler(BaseCallbackHandler):
         start_resp = ChatResponse(sender="bot", message="", type="start")
         asyncio.run(self.websocket.send_json(start_resp.dict()))
 
-        # 获取 thoughts 下的 speak 字段的值
-        json_data = json.loads(outputs['text'])
         speak_field = json_data["thoughts"]["speak"]
 
         # 发送最终的询问结果
@@ -106,17 +116,21 @@ class ToolUseCallbackkHandler(BaseCallbackHandler):
         end_resp = ChatResponse(sender="bot", message="", type="end")
         asyncio.run(self.websocket.send_json(end_resp.dict())) 
 
-        # 开启一个新的对话说明结果
+        # 开启一个新的对话说明问题
         start_resp = ChatResponse(sender="bot", message="", type="start")
         asyncio.run(self.websocket.send_json(start_resp.dict()))
 
         # 发送最终的询问结果
-        result_resp = ChatResponse(sender="bot", message="正在查询网站，并阅读网页内容\n", type="stream")
+        eval_input = eval(input_str)
+
+        result_resp = ChatResponse(sender="bot", message=f"从网络搜索提问：{eval_input['question']}", type="stream")
         asyncio.run(self.websocket.send_json(result_resp.dict()))
 
-                # 结束对话
-        end_resp = ChatResponse(sender="bot", message="", type="end")
         asyncio.run(self.websocket.send_json(end_resp.dict())) 
+
+        # 开启一个新的对话说明结果
+        start_resp = ChatResponse(sender="bot", message="", type="start")
+        asyncio.run(self.websocket.send_json(start_resp.dict()))
 
     def on_tool_end(
         self,
@@ -141,3 +155,49 @@ class ToolUseCallbackkHandler(BaseCallbackHandler):
 
         # 结束对话
         asyncio.run(self.websocket.send_json(end_resp.dict())) 
+
+
+
+from langchain.schema import Document
+
+class WebSearchCallbackHandler(BaseCallbackHandler):
+    """Callback handler for question generation."""
+
+    def __init__(self, websocket):
+        self.websocket = websocket
+
+    def on_chain_start(
+        self,
+        serialized: Dict[str, Any],
+        inputs: Dict[str, Any],
+        **kwargs: Any,
+    ) -> None:
+        """Run when chain starts running."""
+
+        input_documents = inputs['input_documents']
+
+        if len(input_documents) > 0:
+            metadata = input_documents[0].metadata
+            source = metadata['source']
+
+            # 发送最终的询问结果
+            result_resp = ChatResponse(sender="bot", message=f"</br>我正在浏览{source}", type="stream")
+            asyncio.run(self.websocket.send_json(result_resp.dict()))
+
+    def on_chain_end(
+        self,
+        outputs: Dict[str, Any],
+        **kwargs: Any,
+    ) -> None:
+        """Run when chain ends running."""
+
+        output_text = outputs['output_text']
+
+        # 发送最终的询问结果
+        result_resp = ChatResponse(sender="bot", message=f"</br>根据这部分内容：{output_text}", type="stream")
+        asyncio.run(self.websocket.send_json(result_resp.dict()))
+
+        # 结束对话
+        end_resp = ChatResponse(sender="bot", message="", type="end")
+        asyncio.run(self.websocket.send_json(end_resp.dict())) 
+

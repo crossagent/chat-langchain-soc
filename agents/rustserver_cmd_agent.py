@@ -1,6 +1,4 @@
 # General
-import string
-from langchain.experimental.autonomous_agents.autogpt.agent import AutoGPT
 from langchain.chat_models import ChatOpenAI
 
 from langchain.agents.agent_toolkits.pandas.base import create_pandas_dataframe_agent
@@ -188,9 +186,8 @@ class RustServerGPT:
 
 
 from tools.WebHumanInputRun import WebHumanInputRun, CallForHumanCallbackHandler
-from callbacks.socWebCallBacks import ChainSocCallbackHandler
 from tools.ServerCmdSearchTool import SeverGmCmdTool,load_qa_with_sources_chain
-from callbacks.socWebCallBacks import ToolUseCallbackkHandler
+from callbacks.socWebCallBacks import ToolUseCallbackkHandler, WebSearchCallbackHandler, ChainSocCallbackHandler
 
 def get_rust_server_cmd_gpt(
     verbose: bool = False,
@@ -204,9 +201,20 @@ def get_rust_server_cmd_gpt(
 
     websocket = kwargs['websocket']
 
-    llm_lookup = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613", verbose= True)
 
-    query_rust_tool = SeverGmCmdTool(qa_chain=load_qa_with_sources_chain(llm_lookup), callbacks = [ToolUseCallbackkHandler(websocket)], verbose = True)
+    llm_lookup = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613", verbose= True)
+    qa_manager = WebSearchCallbackHandler(websocket)
+
+    from prompts.search_prompt import PROMPT as SEARCH_PROMPT
+    qa_config = {"callbacks" : [qa_manager], "prompt" : SEARCH_PROMPT}
+    qa_chain= load_qa_with_sources_chain(llm_lookup, **qa_config)
+
+    llm_summary = ChatOpenAI(temperature=0, model="gpt-4")
+    from prompts.summary_prompt import PROMPT as SUMMARY_PROMPT
+    summary_config = {"prompt" : SUMMARY_PROMPT}
+    summary_chain = load_qa_with_sources_chain(llm_summary, **summary_config)
+
+    query_rust_tool = SeverGmCmdTool(qa_chain = qa_chain, summary_chain = summary_chain, callbacks = [ToolUseCallbackkHandler(websocket)], verbose = True)
 
     tools = [
         query_rust_tool,
