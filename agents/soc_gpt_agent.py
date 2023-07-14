@@ -3,7 +3,7 @@ from langchain.agents import AgentType
 from langchain.memory import ConversationBufferMemory
 from langchain import OpenAI
 from langchain.agents import initialize_agent
-from chains.soc_question_generate import get_question_generate
+from chains.soc_question_generate import QuestionGenerateChain
 from langchain.agents.agent import AgentExecutor
 from pydantic import BaseModel, Field
 
@@ -13,7 +13,7 @@ class QuestionInput(BaseModel):
     question: str = Field()
     
 def get_agent(llm, verbose=False, callback_manager=None) -> AgentExecutor:
-    question_agent = get_question_generate(llm, verbose=verbose, callback_manager=callback_manager)
+    question_agent = QuestionGenerateChain(llm, verbose=verbose, callback_manager=callback_manager)
 
     tools = [
     Tool(

@@ -78,10 +78,12 @@ from langchain.chains.qa_with_sources.loading import (
 def _get_text_splitter():
     return RecursiveCharacterTextSplitter(
         # Set a really small chunk size, just to show.
-        chunk_size=500,
+        chunk_size=2000,
         chunk_overlap=20,
         length_function=len,
     )
+
+from chains.soc_question_generate import QuestionGenerateChain
 
 class SeverGmCmdTool(BaseTool):
     name = "search_severCommand"
@@ -105,14 +107,28 @@ class SeverGmCmdTool(BaseTool):
         results = []
 
         # TODO: Handle this with a MapReduceChain
-        for i in range(0, len(web_docs), 4):
-            input_docs = web_docs[i : i + 4]
-            window_result = self.qa_chain(
-                {"input_documents": input_docs, "question": question},
-                return_only_outputs=True,
-            )
-            print(window_result)
-            results.append(f"Response from window {i} - {window_result}")
+        # for i in range(0, len(web_docs), 4):
+        #     input_docs = web_docs[i : i + 4]
+        #     window_result = self.qa_chain(
+        #         {"input_documents": input_docs, "question": question},
+        #         return_only_outputs=True,
+        #     )
+        #     print(window_result)
+        #     results.append(f"Response from window {i} - {window_result}")
+
+        # TODO：使用向量数据库来预先分拣最相似的片段
+        from langchain.embeddings.openai import OpenAIEmbeddings
+        embeddings = OpenAIEmbeddings()
+
+        from langchain.vectorstores import FAISS
+        db = FAISS.from_documents(web_docs, embeddings)
+
+        docs = db.similarity_search_with_score(question, k=4)
+
+        print(docs)
+
+        results = [doc.page_content for doc, score in docs]
+
         results_docs = [
             Document(page_content="\n".join(results), metadata={"source": url})
         ]
