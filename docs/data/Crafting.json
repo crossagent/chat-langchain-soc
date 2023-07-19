@@ -1,0 +1,32 @@
+{
+    "title": "Crafting",
+    "content": "Crafting is a process of turning materials into a usable item. To access the crafting menu, press Q by default. ",
+    "sections": [
+        {
+            "title": "Mechanics",
+            "content": "There are 4 levels of crafting.\nBasic\nLevel 1\nLevel 2\nLevel 3",
+            "sections": [
+                {
+                    "title": "Basic crafting",
+                    "content": "To be able to craft basic items, a player only needs the materials. \nItems that can be crafted like this include the Rock, Torch, Camp Fire, Building Plan, etc."
+                },
+                {
+                    "title": "Level 1 crafting",
+                    "content": "To be able to craft Level 1 items, you first need to acquire their Blueprints. These can be obtained by either finding the blueprint or finding the specific item and Research it in a Research Table. \nAfter researching the item, the player will be able to craft it if standing in AoE of a Workbench Level 1 while having the required materials.\n "
+                },
+                {
+                    "title": "Level 2 and 3 crafting",
+                    "content": "The same mechanics apply than at Level 1 crafting for Blueprints.\nAfter acquiring the Blueprint, the player will need a Workbench Level 2 or Workbench Level 3, depending on the level of the item, and the required materials for crafting."
+                }
+            ]
+        },
+        {
+            "title": "Crafting menu",
+            "content": "The crafting menu can be opened by pressing Q by default.\nThere are categories by which you can search Items, or there is a search bar, where you can type the name of the item you want to craft. \nOnce you click on an item, it will display it on the right side of the screen. Below the name of the item, the required level of Workbench will be displayed. If the item is Basic, nothing will be displayed there. At the top right the time needed by default and the amount crafted when crafting 1 of the item will be displayed. At the bottom right of the screen it will tell you what you exactly need for set amount of items crafted (by default: 1). If the crafting material is displayed in yellow, it means you don't have the required amount, if it's displayed in white. \nYou can set the amount of how many you want to craft of an item, either by using the + and - buttons, typing it in or pressing the max icon. When pressing the max icon, it will set the amount to the maximum depending on your resources in your inventory.\n \nWhen pressing TAB, a Quick Crafting Menu will be seen on the right side of the screen. By left clicking on one of the items there, it will start crafting it. By middle clicking, it will queue up 5 items to craft (if possible). By right clicking on an item that's being crafted or is in queue, it will be canceled and the resources will be given back to the player.\nIn the normal Crafting Menu right clicking the orange X on an item in queue will immediately push it to the front, but left clicking it will cancel the crafting of it."
+        },
+        {
+            "title": "Time bonuses",
+            "content": "Time bonuses can be applied to crafting by a Workbench. \nIf standing in AoE of a Workbench, depending on the level of it, and the level of the item you are crafting, you will get a time bonus.\nIf an item is the same level as the Workbench you are standing near, no time bonus will be applied\nIf an item is 1 level below the Workbench you are standing near, the crafting time will be halved.\nIf an item is 2 levels below the Workbench you are standing near, the crafting time will be 1/4 of the normal time.\nIf an item is 3 levels below the Workbench you are standing near, the crafting time will be 1/8 of the normal time.\nMechanics\nAttack\nDamage Types \u2022 Projectiles\nEnvironment\nAnimals \u2022 Barrels \u2022 Biomes \u2022 Flora \u2022 Loot Crates \u2022 Monuments \u2022 Rocks \u2022 Trees\nGameplay\nAttack Helicopter \u2022 Airdrops \u2022 Building \u2022 Combat \u2022 Crafting \u2022 Gathering \u2022 Raiding \u2022 Repairing \u2022 Researching\nPlayer\nFood & Hunger \u2022 Health \u2022 Hydration & Thirst \u2022 Protection \u2022 Sleeping \u2022 Spawning\nXP System\nExperience \u2022 Skill Tree \u2022 Tech Tree\nStatus Effects\nBleeding \u2022 Building Privilege \u2022 Comfort \u2022 Injured \u2022 Poisoning \u2022 Radiation \u2022 Starvation & Dehydration \u2022 Warmth \u2022 Wet & Drowning \u2022 Wounded"
+        }
+    ]
+}

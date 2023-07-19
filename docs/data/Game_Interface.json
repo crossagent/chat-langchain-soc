@@ -1,0 +1,24 @@
+{
+    "title": "Game Interface",
+    "content": "This article is a stub. You can help the Rust Wiki by expanding it.\nGame interface...",
+    "sections": [
+        {
+            "title": "Graphical User Interface",
+            "content": "The GUI is not currently fully fleshed out. The controls are set.",
+            "sections": [
+                {
+                    "title": "Server Browser",
+                    "content": "..."
+                }
+            ]
+        },
+        {
+            "title": "Console",
+            "content": "Main Article: Console\nThe console menu is shown with the 'F1' key."
+        },
+        {
+            "title": "Settings",
+            "content": "In game settings can be adjusted by pressing the 'F2' key.\nSystem\nIn-game\nCosmetic Items \u2022 Store\nServer\nServer Commands\nMarket\nMarket \u2022 Trading \u2022 Trading Cards \u2022 Workshop\nSteam\nConsole Commands \u2022 Controls \u2022 HUD \u2022 In-game Settings"
+        }
+    ]
+}

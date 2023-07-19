@@ -1,0 +1,11 @@
+{
+    "title": "Rust",
+    "content": "Rust is a survival game created by Facepunch Studios. Inspired by games like DayZ, Minecraft, and S.T.A.L.K.E.R. \u2013 Rust aims to create a hostile environment in which emergent gameplay can flourish.\nThe aim of the game is to survive. To do this the player should gather resources. Hitting a tree with a rock will provide wood, hitting a rock with a rock will provide rock and ore. A hatchet can then be crafted from the wood and rock, allowing faster gathering. The player can then hunt a variety of wildlife such as boars, chickens, horses, bears, wolves and deer. Once an animal has been killed it can be butchered to gather its meat and skin. A Camp Fire can be crafted using wood to cook the meat, making it edible.\nThere are two major dangers in the game:\nSince Rust is a multiplayer game, there will be other players also trying to survive. Unfortunately for you they can find you, kill you and take your stuff. Fortunately for you \u2013 you can kill them and take their stuff. Or maybe you can make friends and help each other survive. Rust's world is harsh \u2013 so you might need to make friends to survive.\nThe environment is not kind. Bears and wolves will chase and kill you. Falling from a height will kill you. Being exposed to radiation for an extended period will kill you. Starving will kill you. Being cold will kill you.\nThere are two main versions of the game. There is Experimental, which is the current version of Rust and is updated regularly. And then there is Legacy, which is the older version of Rust that is no longer updated.",
+    "sections": [
+        {
+            "title": "External links",
+            "content": "Official site\nFacebook page\nTwitter page\nSteam Store page\nWikipedia page"
+        }
+    ],
+    "infobox": "Rust\nThe top image is the first logo of Rust, which has seen many alterations and changes to finally become the logo you can view beneath it.\nDeveloper(s)\nFacepunch Studios\nPublisher(s)\nFacepunch Studios\nDistributor(s)\nSteam\nPlatform(s)\nWindows, Linux, Mac OSX\nRelease date(s)\nDec 11, 2013 (alpha)\nGenre(s)\nFirst person, multiplayer-only, survival"
+}

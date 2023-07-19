@@ -1,0 +1,14 @@
+{
+    "title": "Chicken",
+    "content": "Chickens are small animals that can be found around forest areas. Looting them generally gives meat, cloth and bone fragments. A chicken takes one hit from a hatchet or a pickaxe to be killed, since it only has 20 health points.\nFrom a distance, chickens walk around randomly. When approached, they will attempt to get away from the player, but they are very slow, so they are easy to kill. Chickens can peck the player for 2 damage per peck.",
+    "sections": [
+        {
+            "title": "Produces",
+            "content": "When harvested with a Bone Knife or Hatchet, a chicken will yield:\n10-12 Bone Fragments\n5-6 Cloth\n2 Raw Chicken Breast"
+        },
+        {
+            "title": "Gallery",
+            "content": "Black Sex Link chickenBuff Orpington chickenThe chicken in older versions of Rust"
+        }
+    ]
+}

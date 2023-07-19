@@ -1,0 +1,26 @@
+{
+    "title": "Loot Crates",
+    "content": "For the legacy content, see Loot Crates (Legacy).\nLoot Crates are specific, accessible containers that supply a variety of different items. Crates are often the main source of rarer items and components. They are most likely to spawn in the vicinity of certain Monuments and alongside Roads.",
+    "sections": [
+        {
+            "title": "Basic Crate",
+            "content": " \nThe Basic Crate is the most common loot container aside from Barrels.\nThe Basic Crate can contain:\nScrap\nBeancan Grenade\nGarage Door\nChair\nBlueprint\nRoad Sign Jacket\nRoad Sign Kilt\nPickaxe\nWaterpipe Shotgun\nSatchel Charge\nRoad Signs\nSemi Automatic Body\nT-Shirt\nMetal Pipe\nLongsleeve T-Shirt\nGears\nReinforced Glass Window\nFridge\nSalvaged Sword\nRevolver\nCoffee Can Helmet\nFlame Turret\nDouble Barrel Shotgun\nHazmat Suit"
+        },
+        {
+            "title": "Tool Box",
+            "content": "The Tool Box is a small, red box that can contain hatchets, pickaxes, starter weapons, and some basic armour. You're likely to find Tool Boxes in junk piles by roads and Transmission Towers, and on Floating Junk Piles in the ocean.\nThe Tool Box can contain:\nCrossbow\nHatchet\nPickaxe\nHunting Bow\nArrows\nBinoculars\nWood Chestplate\nWood Armor Pants\nLongsleeve T-Shirt\nPants\nT-Shirt\n12 Gauge Buckshot\nCCTV Camera\nTargeting Computer\nFire Arrow\nBone Arrow\n12 Gauge Incendiary Shell\nSalvaged Sword\nSalvaged Cleaver\nSalvaged Axe\nSalvaged Icepick\nJackhammer\nExplosive 5.56 Rifle Ammo\n12 Gauge Slug\n5.56 Incendiary Rifle Ammo\n5.56 HV Rifle Ammo"
+        },
+        {
+            "title": "Military Crate",
+            "content": " \nThe Military Crate (also known as the Gun Crate) contains higher quality items than Basic Crates or Tool Boxes. These crates are only found in Monuments.\nThe Military Crate can contain:\nHigh Quality Metal\nMetal Pipe\nRifle Body\nSMG Body\nThompson Smg\nTargeting Computer\nTech Trash\nSupply Signal\nMetal Barricade\nPump Shotgun\nCustom SMG\nPython Revolver\nSmall Oil Refinery\nSemi-Automatic Rifle\nLarge Furnace\nSmall Oil Refinery\nFlame Thrower\nRocket Launcher\nSemi Automatic Pistol\nMedical Syringe"
+        },
+        {
+            "title": "Food Crate",
+            "content": " \nThe Food Crate is most often found around the exterior of Monuments and alongside roads. Food Crates usually contain up to three items. The Supermarket has five Food Crates that regularly spawn inside.\nThe Food Crate can contain:\nApple\nCan of Beans\nCan of Tuna\nChocolate Bar\nGranola Bar\nSmall Water Bottle\nWater Jug\nAnti-Radiation Pills\nPickles"
+        },
+        {
+            "title": "Elite Loot Crate",
+            "content": " \nAs of Devblog 167 there is a new elite crate. It spawns in the Rocket Launch Site and inside the Military Tunnels. It contains the most valuable items out of all types of crate. It also spawns a large quantity of items compared to the Basic Crate.\nThe Elite Loot Crate can contain:\nScrap\nCCTV Camera\nHigh Quality Metal\nMetal Pipe\nRifle Body\nSMG Body\nTargeting Computer\nTech Trash\nSupply Signal\nHazmat Suit\nRocket Launcher\nAssault Rifle\nArmored Door\nArmored Double Door\nBolt Action Rifle\nTimed Explosive\nRocket\nRed Keycard\nCustom SMG\nPump Jack\nDouble Barrel Shotgun\nVarious Ammunition Types\nL96 Sniper"
+        }
+    ]
+}

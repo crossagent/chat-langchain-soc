@@ -1,0 +1,66 @@
+{
+    "title": "Food & Hunger",
+    "content": "",
+    "sections": [
+        {
+            "title": " Weapons",
+            "content": " 8x Zoom Scope\n Weapon Flashlight\n Weapon Lasersight\n Bolt Action Rifle\n Spas-12\n Bone Knife\n Crossbow\n Custom SMG\n Double Barrel Shotgun\n Eoka Pistol\n F1 Grenade\n Flame Thrower\n Holosight\n Hunting Bow\n Longsword\n LR-300 Assault Rifle\n M249\n M92 Pistol\n Mace\n Machete\n MP5A4\n Muzzle Boost\n Muzzle Brake\n Nailgun\n Pump Shotgun\n Python Revolver\n Revolver\n Rocket Launcher\n Salvaged Cleaver\n Salvaged Sword\n Semi-Automatic Pistol\n Semi-Automatic Rifle\n Simple Handmade Sight\n Silencer\n Stone Spear\n Thompson\n Waterpipe Shotgun\n Wooden Spear\n Beancan Grenade\n Bone Club\n Assault Rifle\n L96 Sniper\n M39 Rifle\n Grenade Launcher"
+        },
+        {
+            "title": " Construction",
+            "content": "Construction items have a separate rendered model when placed.\n Armored Door\n Armored Double Door\n Barbed Wooden Barricade\n Building Plan\n Chainlink Fence\n Chainlink Fence Gate\n Code Lock\n Concrete Barricade\n Floor Grill\n High External Stone Gate\n High External Stone Wall\n High External Wooden Gate\n High External Wooden Wall\n Ladder Hatch\n Large Water Catcher\n Lock\n Metal Barricade\n Metal horizontal embrasure\n Metal Shop Front\n Metal Vertical embrasure\n Metal Window Bars\n Mining Quarry\n Netting\n Prison Cell Gate\n Prison Cell Wall\n Pump Jack\n Reinforced Window Bars\n Sandbag Barricade\n Sheet Metal Door\n Sheet Metal Double Door\n Shop Front\n Small Water Catcher\n Stone Barricade\n Tool Cupboard\n Wood Double Door\n Wood Shutters\n Wooden Barricade\n Wooden Door\n Wooden Ladder\n Wooden Window Bars\n Reinforced Glass Window\n Garage Door"
+        },
+        {
+            "title": " Items",
+            "content": " \n Bed\n Sleeping Bag\n Barbeque\n Camp Fire\n Ceiling Light\n Chair\n Double Sign Post\n Drop Box\n Fridge\n Furnace\n Huge Wooden Sign\n Wood Storage Box\n Water Purifier\n Landscape Picture Frame\n Lantern\n Large Banner Hanging\n Large Banner on pole\n Large Furnace\n Large Planter Box\n Large Wood Box\n Large Wooden Sign\n Locker\n Mail Box\n One Sided Town Sign Post\n Vending Machine\n XL Picture Frame\n Portrait Picture Frame\n Repair Bench\n Research Table\n Rug\n Reactive Target\n Rug Bear Skin\n Salvaged Shelves\n Search Light\n Single Sign Post\n XXL Picture Frame\n Small Oil Refinery\n Small Planter Box\n Small Stash\n Water Barrel\n Small Wooden Sign\n Spinning wheel\n Wooden Sign\n Survival Fish Trap\n Table\n Tall Picture Frame\n Tuna Can Lamp\n Two Sided Hanging Sign\n Workbench Level 1\n Workbench Level 2\n Workbench Level 3\n Two Sided Ornate Hanging Sign\n Two Sided Town Sign Post\nComputer station\nMixing Table"
+        },
+        {
+            "title": " Resources",
+            "content": " Animal Fat\n Bone Fragments\n Water\n Charcoal\n Cloth\n Wolf Skull\n Crude Oil\n Empty Can Of Beans\n Empty Tuna Can\n Explosives\n High Quality Metal\n High Quality Metal Ore\n Human Skull\n Leather\n Low Grade Fuel\n Metal Fragments\n Metal Ore\n Wood\n Salt Water\n Scrap\n Stones\n Sulfur\n Sulfur Ore"
+        },
+        {
+            "title": "Clothing",
+            "content": " Bandana Mask\n Baseball Cap\n Beenie Hat\n Bone Armor\n Bone Helmet\n Boonie Hat\n Boots\n Bucket Helmet\n Burlap Headwrap\n Burlap Shirt\n Burlap Shoes\n Burlap Trousers\n Candle Hat\n Coffee Can Helmet\n Hazmat Suit\n Heavy Plate Helmet\n Heavy Plate Jacket\n Heavy Plate Pants\n Hide Boots\n Hide Halterneck\n Hide Pants\n Hide Poncho\n Hide Skirt\n Hide Vest\n Hoodie\n Improvised Balaclava\n Jacket\n Leather Gloves\n Longsleeve T-Shirt\n Metal Chest Plate\n Metal Facemask\n Miners Hat\n Pants\n Riot Helmet\n Road Sign Jacket\n Road Sign Kilt\n Frog Boots\n Shirt\n Shorts\n Snow Jacket - Red\n Tank Top\n T-Shirt\n Wolf Headdress\n Wood Armor Helmet\n Wood Armor Pants\n Wood Chestplate\n Scientist Hazmat Suit"
+        },
+        {
+            "title": " Tools",
+            "content": " Binoculars\n Hammer\n Flare\n Hatchet\n Rock\n Pick Axe\n Salvaged Axe\n Salvaged Icepick\n Satchel Charge\n Stone Pick Axe\n Stone Hatchet\n Timed Explosive Charge\n Torch\n Supply Signal\n Salvaged Hammer\n Jackhammer\n Chainsaw\n Smoke Grenade"
+        },
+        {
+            "title": " Medicals",
+            "content": " Anti-Radiation Pills\n Bandage\n Large Medkit\n Medical Syringe"
+        },
+        {
+            "title": " Food",
+            "content": " Apple\n Bear Meat\n Bear Meat Cooked\n Black Raspberries\n Blueberries\n Burned Chicken\n Burned Wolf Meat\n Burnt Bear Meat\n Cactus Flesh\n Can of Beans\n Can of Tuna\n Small Trout\n Chocolate Bar\n Cooked Chicken\n Cooked Deer Meat\n Cooked Fish\n Cooked Human Meat\n Cooked Pork\n Cooked Wolf Meat\n Corn\n Corn Clone\n Corn Seed\n Granola Bar\n Hemp Clone\n Hemp Seed\n Minnows\n Mushroom\n Pork\n Pumpkin\n Pumpkin Plant Clone\n Pumpkin Seed\n Raw Chicken Breast\n Raw Deer Meat\n Raw Fish\n Raw Human Meat\n Raw Wolf Meat\n Small Water Bottle\n Water Jug\n Bota Bag"
+        },
+        {
+            "title": " Ammunition",
+            "content": " 12 Gauge Buckshot\n 12 Gauge Slug\n 5.56 Rifle Ammo\n Explosive 5.56 Rifle Ammo\n Handmade Shell\n High Velocity Arrow\n High Velocity Rocket\n HV 5.56 Rifle Ammo\n HV Pistol Ammo\n Incendiary 5.56 Rifle Ammo\n Incendiary Pistol Bullet\n Incendiary Rocket\n Nailgun Nails\n Pistol Bullet\n Rocket\n Smoke Rocket\n Wooden Arrow\n 12 Gauge Incendiary Shell"
+        },
+        {
+            "title": " Traps",
+            "content": " Auto Turret\n Flame Turret\n Land Mine\n Shotgun Trap\n Snap Trap\n Floor Spikes"
+        },
+        {
+            "title": " Misc.",
+            "content": " Acoustic Guitar\n Door Key\n Note"
+        },
+        {
+            "title": "Components",
+            "content": " Empty Propane Tank\n Gears\n Metal Blade\n Tech Trash\n Metal Pipe\n Metal Spring\n Rifle Body\n Road Signs\n Rope\n Semi Automatic Body\n Sewing Kit\n Sheet Metal\n SMG Body\n Tarp\n CCTV Camera\n Targeting Computer"
+        },
+        {
+            "title": " Festive Items",
+            "content": "Objects that are related with festivity.\n Small Present\n Medium Present\n Large Present\n Candy Cane\n Santa Hat\n Coal\n SUPER Stocking\n Small Stocking\n Jack O Lantern Angry\n Candy Cane Club\n Reindeer Antlers\n Jack O Lantern Happy\n Pookie Bear\n Scarecrow\n Skull Fire Pit\n CandyCane\n Gingerbread Man\n Christmas Tree Light\n Pinecone\n Christmas Tree Star\n Christmas Lightstring\n Tinsel\n Door Garland\n Window Garland\n Christmas Tree\n Door Wreath\n Baubels"
+        },
+        {
+            "title": " Obsolete Items",
+            "content": "Outmoded Items that are removed, updated, or have no function in game.\n Camera\n Hazmat Gloves\n Hazmat Helmet\n Hazmat Jacket\n Hazmat Pants\n Battery - Small\n Research Paper\n Blood\n Blueprint\n Bleach\n Duct Tape\n Glue\n Sticks\n Wind Turbine\n Paper\n Hazmat Boots\n Spoiled Chicken\n Spoiled Human Meat\n Spoiled Wolf Meat\n Rotten Apple\n Paper Map\n Blueprint Fragment\n Blueprint Book\n Blueprint Library\n Candy Cane"
+        },
+        {
+            "title": "Unreleased Items",
+            "content": "Main Article: Unreleased Content"
+        }
+    ]
+}

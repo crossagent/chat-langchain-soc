@@ -1,0 +1,14 @@
+{
+    "title": "Wolf",
+    "content": "The Wolf is an aggressive animal that will attack you when you come near or in its general area. The animal can hit you from long distances, up to around three meters away.\nIn Rust experimental, it is not recommended to go near any steep or elevated surface, as animals are not properly coded as of yet and are full of bugs. All animals can walk up 20 meter high vertical cliffs in less than half a second.\nWolves can be seen attacking deer, chickens, and boars; presumably, this is because of the predatory nature of this animal.",
+    "sections": [
+        {
+            "title": "Produces",
+            "content": "When harvested with a Bone Knife or Hatchet, a wolf will yield:\n10 Animal Fat\n40 Bone Fragments\n35 Cloth\n75 Leather\n5 Raw Wolf Meat\n1 Wolf Skull"
+        },
+        {
+            "title": "Trivia",
+            "content": "A wolf has 100 health."
+        }
+    ]
+}

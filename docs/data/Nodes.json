@@ -1,0 +1,19 @@
+{
+    "title": "Nodes",
+    "content": "Mineral nodes, not to be confused with the Starting Tool and Weapon known as Rock\nNodes have always only respawned if they were completely mined. This led to a situation where players who wanted a full node's worth of minerals were disappointed to find half-mined nodes. Instead of simply respawning nodes on a timer regardless of how much they had been mined, the developers added a bonus resource of 20% of the entire node's resources when the rock is completely harvested. \nDifferent kinds of Nodes only yield that one specific material. While mining nodes, you will see an orange glowing \"sweet spot\", which you can hit to mine the node faster (you will not get any more resources though). The \"sweet spot\" can be ignored if you're mining with a Jackhammer. ",
+    "sections": [
+        {
+            "title": "Stone Node",
+            "content": "This node can be identified by its plain grayish color.\nMining with different tools will yield the following amounts of Stone:\n375\naround\n795\n1000\n1000\n1000\n "
+        },
+        {
+            "title": "Sulfur Node",
+            "content": "This node can be identified by its greenish-yellowish coloring.\nMining with different tools will yield the following amounts of Sulfur Ore:\n100\naround 245\n300\n300\n300\n "
+        },
+        {
+            "title": "Metal Node",
+            "content": "This node can be identified by red/brown coloring.\nMining with different tools will yield the amounts of Metal Ore and High Quality Metal Ore:\n250\naround 475\n600\n600\n600\n0\n2\n2\n2\n2\n \n "
+        }
+    ],
+    "infobox": "Stone Node\nLocation\nMountainous regions, hills\nResource\nStones\nDescription\nCan be mined for Stones\nSulfur Node\nLocation\nMountainous regions, hills\nResource\nSulfur Ore\nDescription\nCan be mined for Sulfur Ore\nMetal Node\nLocation\nMountainous regions, hills\nResource\nMetal Ore, High Quality Metal Ore\nDescription\nCan be mined for Metal Ore and HQM Ore"
+}

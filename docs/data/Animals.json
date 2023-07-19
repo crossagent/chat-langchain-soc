@@ -1,0 +1,10 @@
+{
+    "title": "Animals",
+    "content": "There are many animals in Rust. Animals can be hunted, killed and looted by players. They spawn in various rates over different biomes, and can be found most often in wooded areas. Most animals provide a corresponding food item, as well as a corresponding skull, some Cloth, Leather, Bone Fragments, and Animal Fat. Below is a list of animals that are currently in-game.\nBear\nBoar\nChicken\nDeer\nHorse\nWolf",
+    "sections": [
+        {
+            "title": "Notes",
+            "content": "Currently all animals have the potential to be hostile but also some animals will be somewhat friendly. They will attack any players who are nearby as well as players who damage them with ranged weapons. All other animals will attempt to run away in a straight line from any nearby players if damaged with ranged weapons.\nRecently animals used to be able to run through physical terrain such as rocks, but that was fixed.\nAnimals used to be able to pass through building walls; this bug was fixed\nRabbits were in Legacy Rust but were removed\nMechanics\nAttack\nDamage Types \u2022 Projectiles\nEnvironment\nAnimals \u2022 Barrels \u2022 Biomes \u2022 Flora \u2022 Loot Crates \u2022 Monuments \u2022 Rocks \u2022 Trees\nGameplay\nAttack Helicopter \u2022 Airdrops \u2022 Building \u2022 Combat \u2022 Crafting \u2022 Gathering \u2022 Raiding \u2022 Repairing \u2022 Researching\nPlayer\nFood & Hunger \u2022 Health \u2022 Hydration & Thirst \u2022 Protection \u2022 Sleeping \u2022 Spawning\nXP System\nExperience \u2022 Skill Tree \u2022 Tech Tree\nStatus Effects\nBleeding \u2022 Building Privilege \u2022 Comfort \u2022 Injured \u2022 Poisoning \u2022 Radiation \u2022 Starvation & Dehydration \u2022 Warmth \u2022 Wet & Drowning \u2022 Wounded"
+        }
+    ]
+}

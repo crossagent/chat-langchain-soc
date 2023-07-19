@@ -1,0 +1,56 @@
+{
+    "title": "Environment",
+    "content": "The environment in Rust is that of a post-apocalyptic world that has been abandoned for an untold amount of time. There are prebuilt structures sparsely located throughout the map that are implicated to be remnants of previous human civilization. Fauna and flora have reclaimed the land.\nThe map is procedurally generated from the seed in the server settings.",
+    "sections": [
+        {
+            "title": "Map",
+            "content": " \nMain Article: Map\nThere are currently three map options available:\nProcedually Generated Maps\nHapis Island\nSavas Island"
+        },
+        {
+            "title": "Biomes",
+            "content": "Main Article: Biomes\nThe default terrain of the procedural map is broken into three distinct biomes: Desert, Grass and Snow.",
+            "sections": [
+                {
+                    "title": "Arctic",
+                    "content": " \nThe snowy area seems to have more nodes and less trees. However, you may find some snowy forest areas which contain an abundance of trees. The cold will reach very low here and players require clothing to survive. The best starter item for players who are looking to beat the cold would be a full burlap set with an Improvised Balaclava. This will give decent cold protection and requires no Sewing Kits to make."
+                },
+                {
+                    "title": "Arid",
+                    "content": " \nThe desert is a hot southern region filled with mineral rocks, barrels, and palm trees. At night it can get cold, so desert survival requires suitable clothing or a Camp Fire to keep warm. It is the only biome in which cacti may be found, which yield cactus flesh and cloth."
+                },
+                {
+                    "title": "Temperate",
+                    "content": " \nThe Grassy region is generally the most popular on a map due to the temperate climate and abundance of flora and fauna. Because of the popularity, mineral rocks and barrels are sometimes difficult to find at peak hours."
+                }
+            ]
+        },
+        {
+            "title": "Monuments",
+            "content": "Main Article: Monuments\nAirfield\nIndustrial Train Yard\nLighthouse\nMilitary Tunnels\nPower Plant\nRadtown\nSatellite Dish Array\nSphere Tank\nWarehouse\nWater Treatment Plant\nHarbour\nLaunch Site\nHQM Quarry\nSulfur Quarry\nMetal Quarry\nStone Quarry\nJunkyard"
+        },
+        {
+            "title": "Flora",
+            "content": "Trees of different kinds\nBushes/Shrubs\nMushrooms, which can be picked and eaten\nSmall plants and flowers\nGrass\nCacti (desert areas)\nHemp Fibres (can be harvest for cloth)\nPumpkins\nCorn"
+        },
+        {
+            "title": "Fauna",
+            "content": "Main Article: Animals\nBear\nBoar\nChicken\nDeer\nHorses\nWolf"
+        },
+        {
+            "title": "Minerals",
+            "content": "Stone\nMetal\nSulfur"
+        },
+        {
+            "title": "Enemies",
+            "content": "Bandits\nScientist"
+        },
+        {
+            "title": "Lootables",
+            "content": "Airdrops\nBarrels\nLoot Crates"
+        },
+        {
+            "title": "Trivia",
+            "content": "The arctic biome had been removed, and was re-introduced again, the likely cause for the original removal was that it was fairly abundant with resources and there weren't many downsides, as a geared player's base would be protected from new spawns.\nMechanics\nAttack\nDamage Types \u2022 Projectiles\nEnvironment\nAnimals \u2022 Barrels \u2022 Biomes \u2022 Flora \u2022 Loot Crates \u2022 Monuments \u2022 Rocks \u2022 Trees\nGameplay\nAttack Helicopter \u2022 Airdrops \u2022 Building \u2022 Combat \u2022 Crafting \u2022 Gathering \u2022 Raiding \u2022 Repairing \u2022 Researching\nPlayer\nFood & Hunger \u2022 Health \u2022 Hydration & Thirst \u2022 Protection \u2022 Sleeping \u2022 Spawning\nXP System\nExperience \u2022 Skill Tree \u2022 Tech Tree\nStatus Effects\nBleeding \u2022 Building Privilege \u2022 Comfort \u2022 Injured \u2022 Poisoning \u2022 Radiation \u2022 Starvation & Dehydration \u2022 Warmth \u2022 Wet & Drowning \u2022 Wounded"
+        }
+    ]
+}

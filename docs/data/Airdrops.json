@@ -1,0 +1,14 @@
+{
+    "title": "Airdrops",
+    "content": "Airdrops are events which will cause a plane to fly over the map and drop a crate containing various supplies. These supplies are dropped in a large green container which will slowly parachute to the ground.\nSome of the most valuable items in the game can be obtained from this event. You will hear a loud noise of a passing plane when the event starts, and a red light can be seen blinking on the bottom of the plane by nearby players. \nThis event can happen around once an hour, but can also be activated by the host of a server, or by using a Supply Signal, which can rarely spawn in military crates.\nThe plane which supplies these Airdrops is a variant of the C-130.",
+    "sections": [
+        {
+            "title": "Tactics",
+            "content": "Other players will almost certainly be dying for the Airdrop loot. Even if you can't spot any other players in your direct area, you might be in someone's line of sight. Snap Traps and Land Mines from the drop itself may be used to booby-trap the drop site, on low population servers, but it is most likely that there will be a firefight, or one player will grab the loot and run."
+        },
+        {
+            "title": "Supplies Found",
+            "content": "A list of items occasionally found in Supply Drops:\n12 Gauge Incendiary Shell\nAuto Turret\nAssault Rifle\nBolt Action Rifle\nBucket Helmet\nCCTV Camera\nCustom SMG\nDouble Barrel Shotgun\nFlame Thrower\nHigh Quality Metal\nHoodie\nJacket\nLandmine\nLongsleeve T-Shirt\nLR-300 Assault Rifle\nM92 Pistol\nMace\nMetal Chest Plate\nMP5A4\nPants\nPistol Bullet\nPump Shotgun\nRevolver\nRiot Helmet\nRoad Sign Jacket\nWorkbench SAR\nSilencer\nSnap Trap\nSnow Jacket\nSupply Signal\nTargeting Computer\nThompson\nTimed Explosive Charge (C4)\nWaterpipe Shotgun\nWood Chestplate\nWood Armor Pants\nShould you find any other items in Supply Drops, feel free to add them to the list.\n \nMechanics\nAttack\nDamage Types \u2022 Projectiles\nEnvironment\nAnimals \u2022 Barrels \u2022 Biomes \u2022 Flora \u2022 Loot Crates \u2022 Monuments \u2022 Rocks \u2022 Trees\nGameplay\nAttack Helicopter \u2022 Airdrops \u2022 Building \u2022 Combat \u2022 Crafting \u2022 Gathering \u2022 Raiding \u2022 Repairing \u2022 Researching\nPlayer\nFood & Hunger \u2022 Health \u2022 Hydration & Thirst \u2022 Protection \u2022 Sleeping \u2022 Spawning\nXP System\nExperience \u2022 Skill Tree \u2022 Tech Tree\nStatus Effects\nBleeding \u2022 Building Privilege \u2022 Comfort \u2022 Injured \u2022 Poisoning \u2022 Radiation \u2022 Starvation & Dehydration \u2022 Warmth \u2022 Wet & Drowning \u2022 Wounded"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "title": "Friendlies",
+    "content": "Friendlies (or Friendly Players) are players in the game that will not attack other players except in self-defense. \nPlayers inside your own alliance or group are not considered Friendlies. They are instead considered allies.\nFriendlies may just leave the other player alone, or may even help them; greeting them on chat and sharing resources and/or kills. \nIn some cases Friendlies may even defend newly spawned players from hostile bandits and wildlife.",
+    "sections": [
+        {
+            "title": "Signs That a Player is Friendly",
+            "sections": [
+                {
+                    "title": "Signs That a Player is Friendly",
+                    "content": "Greeting on Voice Chat Ex: \"Hello\" or \"How are you doing?\"\nAllows themselves to be exposed.\nDoes not flee or attack player.\nIf armed, will not shoot, even at close range.\nWillingness to help."
+                },
+                {
+                    "title": "Friendlies on Servers",
+                    "content": "Some servers may have more friendlies than others. Generally, servers with more peaceful or cooperative atmospheres will have more friendlies. Servers with more hostile atmospheres and lone players tend to have more bandits. However, just because a server has more friendlies does not mean bandits are not an issue. Always exercise caution when encountering new players. If it is unclear if a player is friendly, assume they are hostile."
+                }
+            ]
+        }
+    ]
+}

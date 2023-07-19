@@ -1,0 +1,22 @@
+{
+    "title": "Armor",
+    "content": "A Full list can be seen in Attire\nArmor is a system in Rust based on equipping particular items in the clothing slots ( by default, these are to the left of your inventory screen.). Particular items grant different resistances to different things. Urban gear is considered the best for survival as it will ensure better protection in gun fights, whereas rad-proof clothing is better for exploration in irradiated areas so that one can loot without having to suffer as much. Clothing only protects a couple damage points per hit while Armour protects a lot more. (Metal Helmets and Metal Chestplates)\nClothing does protect against melee and bullet attacks slightly with a maximum of 8hp from a bullet. Clothing protects about 4hp per hit from melee attacks. All clothing currently protects the same amount. (A burlap shirt has just as much stopping power as a snow jacket. Burlap recommended!)\nArmour protects 90% of the body it covers from bullet attacks.\nArmour protects 50% of the body it covers from melee attacks.\nArmour does not protect parts of the body it is not covering where skin is showing.\nHazmat helmet is an exception as it provides no protection!\nHEAD\nCold\nHeat\nRadi\nFall\nElec\nExpl\nBlun\nStab\nSlas\nBull\nBite\nBoonie Hat\n7\n0\n1\n0\n0\n0\n2\n2\n2\n2\n3\nBaseball Cap\n7\n0\n1\n0\n0\n0\n2\n2\n2\n2\n3\nBurlap Headwrap\n7\n0\n2\n0\n0\n0\n3\n3\n3\n3\n3\nImprovised Balaclava\n14\n0\n3\n0\n0\n3\n3\n3\n3\n3\n3\nBone Helmet\n0\n4\n4\n0\n0\n7\n7\n7\n7\n4\n14\nWood Armor Helmet\n7\n0\n2\n0\n0\n0\n4\n4\n4\n3\n3\nWolf Headdress\n6\n0\n4\n0\n0\n13\n13\n13\n13\n5\n13\nBucket Helmet\n6\n0\n4\n0\n0\n13\n13\n13\n13\n5\n13\nCoffee Can Helmet\n0\n0\n5\n0\n0\n8\n8\n8\n8\n6\n8\nRiot Helmet\n6\n0\n5\n0\n0\n8\n13\n13\n13\n4\n13\nHeavy Plate Helmet\n0\n0\n0\n0\n0\n11\n13\n13\n13\n9\n13\nCHEST\nCold\nHeat\nRadi\nFall\nElec\nExpl\nBlun\nStab\nSlas\nBull\nBite\nWood Chestplate\n0\n0\n5\n0\n0\n5\n7\n7\n7\n2\n5\nLEGS\nCold\nHeat\nRadi\nFall\nElec\nExpl\nBlun\nStab\nSlas\nBull\nBite\nRoad Sign Kilt\n-8\n0\n0\n0\n0\n0\n20\n25\n25\n20\n60\nHeavy Plate Pants\n0\n0\n7\n0\n0\n12\n12\n12\n12\n13\n12\nFEET\nCold\nHeat\nRadi\nFall\nElec\nExpl\nBlun\nStab\nSlas\nBull\nBite\nHANDS\nCold\nHeat\nRadi\nFall\nElec\nExpl\nBlun\nStab\nSlas\nBull\nBite",
+    "sections": [
+        {
+            "title": "Cloth",
+            "content": "Cloth armor has the benefit of being easy and readily available to craft. It provides reasonable protection against the cold, while offering a little protection against radiation and relatively least against attacks."
+        },
+        {
+            "title": "Leather",
+            "content": "Leather armor has the benefit of being more protective than cloth armor. It provides decent protection against the cold and attacks, while offering some protection against radiation.\nLeather helmet.jpgLeather HelmetLeathervest.pngLeather VestLeatherpants.pngLeather PantsLeather boots.jpgLeather Boots"
+        },
+        {
+            "title": "Metal",
+            "content": "Metal armor offers the most protection against attacks, and some protection against radiation. It actually makes the cold worse.\nKevlar Helmet.pngKevlar HelmetKevlar Vest.pngKevlar VestKevlarpants.pngKevlar PantsKevlarboots.pngKevlar Boots"
+        },
+        {
+            "title": "Radiation Suit",
+            "content": "Radiation Suit armor is extremely effective at countering radiation and cold and makes bullet attacks worse. \nRad helmet.pngRad Suit HelmetRad vest.pngRad Suit VestRad pants.pngRad Suit PantsRad boots.pngRad Suit Boots"
+        }
+    ]
+}

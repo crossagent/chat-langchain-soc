@@ -26,23 +26,23 @@ async def async_load_playwright(url: str) -> str:
             for script in soup(["script", "style"]):
                 script.extract()
 
-            # 找到目标table节点
-            markdown_node = soup.find('div', {'class': 'markdown', 'id': 'pagecontent'})
-            table = markdown_node.find('table')
+            # 找到所有表格
+            tables = soup.find_all('table')
 
-            # 获取表头行
-            header_row = table.find('tr')
+            for table in tables:
 
-            # 获取所有数据行
-            data_rows = table.find_all('tr')[1:]  # 假设第一行是表头行
+                # 获取表头行 
+                header_row = table.find('tr')
 
-            # 遍历每个字段，并添加表头和冒号
-            for row in data_rows:
-                cells = row.find_all('td')
-                for i, cell in enumerate(cells):
-                    header_text = header_row.find_all('th')[i].get_text()
-                    text = cell.get_text().strip()
-                    cell.string = f"{header_text}: {text}"
+                # 获取所有数据行
+                data_rows = table.find_all('tr')[1:] 
+
+                for row in data_rows:
+                    cells = row.find_all('td')
+                    for i, cell in enumerate(cells):
+                        header_text = header_row.find_all('th')[i].get_text()
+                        text = cell.get_text().strip() 
+                        cell.string = f"{header_text}: {text}"
 
             text = soup.get_text()
             lines = (line.strip() for line in text.splitlines())

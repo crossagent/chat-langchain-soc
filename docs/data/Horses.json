@@ -1,0 +1,18 @@
+{
+    "title": "Horses",
+    "content": "Horses are a type of animal found in Rust. They are a passive animal that will not try to attack the player; however if you approach close to it or try to shoot at it, it will attempt to flee the player for its life. Horses can be spotted in various colours, including grey, dark brown, and light brown. Their manes and tails are usually a few shades darker than the majority of their skin. Horses, like any other passive animal in the Experimental version, can (at first) sprint much faster than the player in an attempt to escape. After running for about 30 seconds, they tire out and either almost completely stop, or trot just below player sprinting speed.",
+    "sections": [
+        {
+            "title": "Produces",
+            "content": "When harvested with a Bone Knife or Hatchet, horses will yield:\n10 Animal Fat\n50 Bone Fragments\n25 Cloth\n50 Leather\n5 Raw Deer Meat"
+        },
+        {
+            "title": "Trivia",
+            "content": ""
+        },
+        {
+            "title": "Gallery",
+            "content": "A roaming Black Horse.A Grey Horse.Occasionally Horses will neigh."
+        }
+    ]
+}

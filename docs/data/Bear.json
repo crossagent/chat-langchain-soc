@@ -1,0 +1,18 @@
+{
+    "title": "Bear",
+    "content": "The Bear is an animal that has 400 health and is very difficult to kill and will attack the player if in their range. Bears are capable of short sprinting bursts which let them run up to 4 times as fast as a player's top speed. This makes the Bear extremely dangerous, considering how renowned it is for its heavy bite damage plus Bleeding. Inventory items used to be lost when Bears would eat the body of a player after killing them; now a Backpack contains the player's items when killed.",
+    "sections": [
+        {
+            "title": "Produces",
+            "content": "When harvested with a Bone Knife or Hatchet, a bear will yield:\n100 Animal Fat\n19 Bear Meat\n150 Bone Fragments\n50 Cloth\n100 Leather"
+        },
+        {
+            "title": "Strategies",
+            "content": "Bears can be frustrating for new players and fresh spawns, as they are able to outrun the player and move about the map almost silently. There are, however, some simple strategies that new players can utilize to make bears less of a threat:\nCarry a Building Plan with you and quickly build a foundation that you can jump onto to avoid the bear's attacks. This will give you time to heal bleeding and recover health. The bear will hang around for a while but will be unable to reach you, giving you the opportunity to kill it with a bow or wooden spear.\nIf you don't have a Building Plan with you, you can simply jump onto a nearby boulder that is tall enough to get you out of range of the bear's attacks. The bear will clip through the boulder, but there will usually be a part of its body exposed that you can attack as before. (this has been patched and will no longer work, bears walk on rocks!)\nSwimming across larger bodies of water will cause bears to lose interest and break chase.\nRunning in circles can make the Bear run out of stamina and run away from the player.\nIf you want to kill a Bear, and only have bows, you should bring friends. However, killing the bear using guns is not much of a challenge."
+        },
+        {
+            "title": "Known Bugs",
+            "content": "Ability to hit players on low foundations.\nWill sometimes get stuck and stop moving."
+        }
+    ]
+}

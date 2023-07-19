@@ -1,0 +1,10 @@
+{
+    "title": "Stability",
+    "content": "Stability is a reflection of a structure's endurance; the more stable, the less likely it is to fall apart. If it reaches zero, it will break instantly upon placement. A stability percentage is visible when mousing over a building object at melee range with a hammer.",
+    "sections": [
+        {
+            "title": "Pillars (Older Versions)",
+            "content": "Pillars used to be in the game, but they were removed in Update 196, which took effect on February 1st, 2018. Pillars were used to add more stability to floors above.\nMechanics\nAttack\nDamage Types \u2022 Projectiles\nEnvironment\nAnimals \u2022 Barrels \u2022 Biomes \u2022 Flora \u2022 Loot Crates \u2022 Monuments \u2022 Rocks \u2022 Trees\nGameplay\nAttack Helicopter \u2022 Airdrops \u2022 Building \u2022 Combat \u2022 Crafting \u2022 Gathering \u2022 Raiding \u2022 Repairing \u2022 Researching\nPlayer\nFood & Hunger \u2022 Health \u2022 Hydration & Thirst \u2022 Protection \u2022 Sleeping \u2022 Spawning\nXP System\nExperience \u2022 Skill Tree \u2022 Tech Tree\nStatus Effects\nBleeding \u2022 Building Privilege \u2022 Comfort \u2022 Injured \u2022 Poisoning \u2022 Radiation \u2022 Starvation & Dehydration \u2022 Warmth \u2022 Wet & Drowning \u2022 Wounded"
+        }
+    ]
+}

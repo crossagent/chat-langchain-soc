@@ -1,0 +1,10 @@
+{
+    "title": "How to Identify Rocks",
+    "content": "This is a guide on how to identify the different type of mineral rocks in Rust. \nFor the main article, look here.\nThe Mineral Rock is an environmental resource in Rust. They generally spawn almost anywhere on the map, and unlike the cliffs and mountains of the world, mineral rocks can be mined for resources. Mineral rocks can be easily distinguished from other, non-mine-able rocks due to their rounded appearance, with a colored pattern indicative of what resource they contain.\n ",
+    "sections": [
+        {
+            "title": "Identification of Mineral Node Types",
+            "content": "Stone Node: These Nodes spawn primarily in Grassy biomes. These rocks are a constant shade of grey, and no other color. (After the Blueprints 3.0 update, they can frequently spawn as red-tinted nodes in desert biomes).\nMetal Node: This type of rock appears primarily in Snow biomes, faint reddish-brown splotches are visible on the rock.\nSulfur Node: This Node usually appears in Desert biomes. Easy to distinguish from the other types of rocks because they have highly visible splotches and streaks of yellow."
+        }
+    ]
+}

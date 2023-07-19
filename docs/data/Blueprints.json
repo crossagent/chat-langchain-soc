@@ -1,0 +1,31 @@
+{
+    "title": "Blueprints",
+    "content": "These blueprints can be easily found. Or they can be obtained by using 20 seconds blueprint fragments from the above location.\nLarge Furnace\nLarge Wood Box\nLeather Gloves\nMachete\nMedical Syringe\nMetal horizontal embrasure\nMetal Vertical embrasure\nPistol Bullet\nSalvaged Shelves\nSalvaged Sword\nSingle Sign Post\nStone Barricade\nStone Spear\nWater Bucket\nWood Armor Pants\nWood Chestplate\nWood Shutters\nWooden Floor Spikes",
+    "sections": [
+        {
+            "title": "Uncommon Blueprints",
+            "sections": [
+                {
+                    "title": "Uncommon Blueprints",
+                    "content": "These blueprints are less common than the common blueprints but are still more common than rare and very rare blueprints. They can be obtained in the above locations or by using a Blueprint Page\n12 Gauge Buckshot\n5.56 Rifle Ammo\nAcoustic Guitar\nBarbed Wooden Barricade\nBeancan Grenade\nBed\nBone Armor Pants\nBone Jacket\nBoonie Hat\nBucket Helmet\nCeiling Light\nCrossbow\nDouble Sign Post\nExplosives\nHatchet\nHazmat Boots\nHazmat Gloves\nHazmat Jacket\nHazmat Pants\nHigh External Wooden Gate\nHigh External Wooden Wall\nHigh Velocity Arrow\nImprovised Balaclava\nJacket\nLandscape Picture Frame\nLantern\nLarge Medkit\nLarge Water Catcher\nLarge Wooden Sign\nMetal Barricade\nMiners Hat\nMining Quarry\nOne Sided Town Sign Post\nPortrait Picture Frame\nReinforced Window Bars\nRevolver\nRiot Helmet\nSalvaged Axe\nSalvaged Hammer\nSandbag Barricade\nSmall Oil Refinery\nSnap Trap\nSurvey Charge\nTall Picture Frame\nTwo Sided Hanging Sign\nWater Barrel\nWooden Sign"
+                },
+                {
+                    "title": "Rare Blueprints",
+                    "content": "These blueprints can be obtained using a Blueprint Book.\n12 Gauge Slug\nCoffee Can Helmet\nConcrete Barricade\nExplosive 5.56 Rifle Ammo\nF1 Grenade\nFlame Thrower\nHazmat Helmet\nHigh Velocity Rocket\nHuge Wooden Sign\nHV 5.56 Rifle Ammo\nHV Pistol Ammo\nIncendiary 5.56 Rifle Ammo\nIncendiary Pistol Bullet\nIncendiary Rocket\nLand Mine\nLarge Banner Hanging\nLarge Banner on pole\nLongsword\nMace\nPick Axe\nPump Shotgun\nRoad Sign Jacket\nRoad Sign Kilt\nRocket\nSalvaged Cleaver\nSalvaged Icepick\nSemi-Automatic Pistol\nSemi-Automatic Rifle\nSnow Jacket - Red\nThompson\nTwo Sided Ornate Hanging Sign\nTwo Sided Town Sign Post\nXL Picture Frame\nXXL Picture Frame"
+                },
+                {
+                    "title": "Very Rare Blueprints",
+                    "content": "These blueprints are the hardest to obtain. These can be obtained in the above locations or by using a Blueprint Library.\n4x Zoom Scope\nAssault Rifle\nAuto Turret\nBolt Action Rifle\nCustom SMG\nHigh External Stone Gate\nHigh External Stone Wall\nHolosight\nMetal Chest Plate\nMetal Facemask\nMuzzle Boost\nMuzzle Brake\nRocket Launcher\nSilencer\nTimed Explosive Charge\nLaser Sight\nWeapon Flashlight"
+                }
+            ]
+        },
+        {
+            "title": "Conversion Table",
+            "content": "In the new blueprint system the lower tier blueprints can be converted into higher tier blueprints. The following table shows the amount required for each.\nN/A\n60\n300\n1200\n60\nN/A\n5\n20\n300\n5\nN/A\n4\n1200\n20\n4\nN/A"
+        },
+        {
+            "title": "See also",
+            "content": "Researching"
+        }
+    ]
+}

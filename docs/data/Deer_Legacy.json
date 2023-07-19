@@ -1,0 +1,11 @@
+{
+    "title": "Deer (Legacy)",
+    "content": "Deer can be found around the world of Rust. So far their only use is as a way to obtain food and cloth. They can be killed and produce a sizable batch of Raw Chicken Breasts. The total amount of loot from a Deer is 10 Raw Chicken Breast, and 10 Cloth.\nin rust experimental, you will manage to get about 26 cloth, 3 raw wolf meat and some bones from a deer.",
+    "sections": [
+        {
+            "title": "AI",
+            "content": "The deer AI only appears to react if you're sprinting or walking towards it. Other than that, they're pretty easy to sneak up on and kill by crouching. They can be killed in 4 hits with a rock or 2 hits with a bow. for some reason, shooting it in the head doesn't make a difference.( This has now been changed 1 shot to the head will kill with a bow) instead, try to shoot it in the legs, which will usually instantly kill the animal in Rust experimental. \nUpon being hit, a deer will run a short distance away, moving faster than the player can sprint. Using a melee weapon will require multiple crouch sneaks to a single deer. in Rust experimental, you can also keep on chasing after it, as the animal will eventually stop running and go back to walking around, presumably because it has gotten tired. it should be fairly easy to kill once it has stopped running, although it will still walk around in random patterns, which can still make it hard to hit.\nin rust experimental, any animal, including the deer, can walk onto 20 meter high vertical cliffs in less than half a second. this makes it very hard to hunt in areas with many rocks, especially if those rocks are taller than the player."
+        }
+    ],
+    "infobox": "Deer\nType\nNPC\nCrafting\nCraftable\nN/A\nDescription\nOne of Mother Nature's laggiest creatures"
+}

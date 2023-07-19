@@ -1,0 +1,10 @@
+{
+    "title": "Controls",
+    "content": "The controls listed below are the default controls that may be changed by the user.",
+    "sections": [
+        {
+            "title": "Controls (Experimental Rust)",
+            "content": "Movement\nWASD\nLeft Click\nUse Equipped Item (ALT)\nRight Click\nJump\nSpace\nCrouch\nHold Control\nHead Look\nAlt + move mouse\nInventory\nTab or i\nOpen crafting tab\nQ (or press \"crafting\" at top of screen)\nHotbar Items\nNumbers 1-6\nAlternative Hotbar Item Switch\nScroll Wheel\nInteract\nE on object\nRotate Building Piece\nR while placing\nOpen Interaction Menu Wheel\nHold E on object, Left Click to select\nChange Building Plan Structure\nHold Right Click, Left Click to select\nCancel Menu Wheel Selection\nRelease held button (E or Right Click)\nLobby Menu\n`\nChat\nT or Enter\nVoice-Chat\nHold V\nReloading\nR\nTurn Music On/Off\nPage Up\nOpen Map Screen\nHold G\nEdit Map\nRight Click while holding G\nEnable the Console\nF1\nSettings Overlay (in-g\nControls (Legacy Rust)\nName\nMovement\nWASD\nUse Equipped Item\nLeft Click\nUse Equipped Item(ALT)\nRight Click\nJump\nSpace\nCrouch\nHold Control\nSprint\nHold Shift\nLook Behind\nAlt + move mouse\nInventory\nTab or I\nHotbar Items\nNumbers 1-6\nInteract\nE\nRotate Building Piece\nScroll Wheel or Mouse 2\nExit Menu\nEscape\nChat\nT or Enter\nVoice-Chat\nHold V\nReloading\nR\nTurn Music On/Off\nPage Up\nMap\nG\nToggle Flashlight\nF\nEnable the Console\nF1\nSystem\nIn-game\nCosmetic Items \u2022 Store\nServer\nServer Commands\nMarket\nMarket \u2022 Trading \u2022 Trading Cards \u2022 Workshop\nSteam\nConsole Commands \u2022 Controls \u2022 HUD \u2022 In-game Settings\n|}|}|}"
+        }
+    ]
+}

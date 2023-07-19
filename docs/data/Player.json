@@ -1,0 +1,19 @@
+{
+    "title": "Player",
+    "content": "The Player spawns with a rock, a torch, and no clothes. The first thing a player sees typically is a bullet via distrust by other players. Players are represented as naked men or women when spawned, but can acquire clothing later in the game. At the current moment there is limited selection in the game. ",
+    "sections": [
+        {
+            "title": "Player Abilities",
+            "content": "Currently players are able to craft objects, construct houses, operate firearms and collect resources via a variety of tools. Currently players are able to create traps, build houses, and even run servers. There are no limitations on the abilities, which is a part of Rust. In essence Rust is a huge experiment to see how players band together to form the world as they implement more objects into the world."
+        },
+        {
+            "title": "Notes",
+            "content": "In previous versions of Rust, players had the ability to learn new crafting recipes by finding Blueprints or Research Kits.\nIn Legacy, only one player model existed which resulted in everybody looking exactly the same. Players could however, craft and wear different clothes and armor to help distinguish themselves from other players."
+        },
+        {
+            "title": "Gallery",
+            "content": "The old Legacy player model (with clothes).A player in Legacy stands over his corpse.\nMechanics\nAttack\nDamage Types \u2022 Projectiles\nEnvironment\nAnimals \u2022 Barrels \u2022 Biomes \u2022 Flora \u2022 Loot Crates \u2022 Monuments \u2022 Rocks \u2022 Trees\nGameplay\nAttack Helicopter \u2022 Airdrops \u2022 Building \u2022 Combat \u2022 Crafting \u2022 Gathering \u2022 Raiding \u2022 Repairing \u2022 Researching\nPlayer\nFood & Hunger \u2022 Health \u2022 Hydration & Thirst \u2022 Protection \u2022 Sleeping \u2022 Spawning\nXP System\nExperience \u2022 Skill Tree \u2022 Tech Tree\nStatus Effects\nBleeding \u2022 Building Privilege \u2022 Comfort \u2022 Injured \u2022 Poisoning \u2022 Radiation \u2022 Starvation & Dehydration \u2022 Warmth \u2022 Wet & Drowning \u2022 Wounded"
+        }
+    ],
+    "infobox": "Player\nType\nEntity\nCrafting\nCraftable\nN/A\nDescription\nThe folks who play the game."
+}

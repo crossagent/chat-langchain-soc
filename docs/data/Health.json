@@ -1,0 +1,18 @@
+{
+    "title": "Health",
+    "content": "Health is found on the HUD of the game. A character starts off with a 60 health, and it can be restored through Food, water and med kits.",
+    "sections": [
+        {
+            "title": "Health Restoring Items",
+            "content": "These are the items that restore health, sorted from least healing to greatest.\nMushroom: +3\nCan of Tuna/Can of Beans/Chocolate Bar: +5 HP\nGranola Bar: +8 HP\nCooked Chicken Breast: +10 HP\nSmall Rations: +25 HP\nSmall Medkit: +40 HP\nLarge Medkit: +100 HP (Completely heals you)"
+        },
+        {
+            "title": "Health Loss",
+            "content": "You can lose health by the following things:\nEating Raw Chicken Breast -10 HP\nPoisoned status effect -5 to -15 HP per hit\nBleeding status effect -5 to -10 HP per hit\nGetting shot, bitten, hit, etc."
+        },
+        {
+            "title": "Death",
+            "content": "When your health meter drops to 0, you begin to bleed out (unless shot in the head, in which case you die). When bleeding out, you cannot take any action except using voice chat. Your character will reach his arm out periodically to visually signal for help. Anyone can revive or loot you while in this state by pressing their use key on your character. You have a small chance to revive yourself when you are bleeding out, but currently, the criteria for this to happen is vague; some players have reported having high water/calories will increase the chance. If you do not recover on your own, you must be revived by another player or you will die.\nWhen you die, all your items are left on your body until it either despawns (despawn time?) or someone loots and/or destroys it. The item you were wielding is dropped onto the floor.\nUpon death, you're given two choices: to respawn in a random area on the map, or to respawn at a camp (Sleeping Bag/Bed). If you go into the console commands (F1) and type \"kill\" into the console, you will instantly die.\nGuns that one shot kill (deals 100+ damage to players, and if it can be done in full kevlar armour, it is specified.)\nPipe shotgun (full kev, w/ headshot)\nHandCannon (same as pipe shotgun)\nBolt Action Rifle (same as pipe shotgun, and kills naked players with one hit ANYWHERE.)\nShotgun (same as previous 3, but does not need to be a headshot, just have all pellets from the shotgun spray hit the target)\nM4 (kills naked players w/ headshot)\nMechanics\nAttack\nDamage Types \u2022 Projectiles\nEnvironment\nAnimals \u2022 Barrels \u2022 Biomes \u2022 Flora \u2022 Loot Crates \u2022 Monuments \u2022 Rocks \u2022 Trees\nGameplay\nAttack Helicopter \u2022 Airdrops \u2022 Building \u2022 Combat \u2022 Crafting \u2022 Gathering \u2022 Raiding \u2022 Repairing \u2022 Researching\nPlayer\nFood & Hunger \u2022 Health \u2022 Hydration & Thirst \u2022 Protection \u2022 Sleeping \u2022 Spawning\nXP System\nExperience \u2022 Skill Tree \u2022 Tech Tree\nStatus Effects\nBleeding \u2022 Building Privilege \u2022 Comfort \u2022 Injured \u2022 Poisoning \u2022 Radiation \u2022 Starvation & Dehydration \u2022 Warmth \u2022 Wet & Drowning \u2022 Wounded"
+        }
+    ]
+}

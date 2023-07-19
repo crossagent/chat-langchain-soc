@@ -1,0 +1,10 @@
+{
+    "title": "Category:Maps",
+    "content": "",
+    "sections": [
+        {
+            "title": "Overview",
+            "content": " \nMaps are either generated procedurally from a size (1 to 8 km\u00b2) and seed (31bit integer value) through the server's command line parameters or are a non-procedurally generated custom map (HapisIsland, SavasIsland_koth, CraggyIsland).\nThe Oxide extension Rust:IO has been used to generate the maps below. Its website also provides procedural map generation as a service including a map gallery.\nEach procedural map is a combination of three biomes: arctic, temperate and arid (from north to south)."
+        }
+    ]
+}

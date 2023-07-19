@@ -1,0 +1,18 @@
+{
+    "title": "Raiding",
+    "content": "",
+    "sections": [
+        {
+            "title": "Pick Raiding",
+            "content": "Players can hit a component of the structure with a weapon to do enough damage to destroy the component. The component takes a varying number of hits depending on the health and build tier of the component and the weapon used. Here are a few examples of commonly used raiding melee tools:\nTools / Weapons\nTwig Tier (10 hp)\nWood Tier (250 hp)\nStone Tier (500 hp)\nSheet Metal Tier (1000 hp)\nArmored Tier (2000 hp)\nWooden Spear\n2 hits @ 4 dmg/hit\nUnknown\nUnknown\nUnknown\nUnknown\nHatchet\n3 hits\n4 dmg per hit\n750 hits\n1 dmg per 3 hits\n9,500 hits\n1 dmg per 19 hits\nUnknown\nUnknown\nPick Axe\n3 hits\n4 dmg per hit\n540 hits\n1.4 dmg per 3 hits\n2,500 hits\n1 dmg per 5 hits\nUnknown\nUnknown"
+        },
+        {
+            "title": "Explosives",
+            "content": "Wall\nTwig Tier\nWood Tier\nStone Tier\nSheet Metal Tier\nArmored Tier\nTimed Explosive Charges\n1\n1\n2\n4\n8\nRocket launcher (Rocket)\n1\n1\n4\n8\n15\nRocket launcher (HV Rocket)\n1\n9\n32\n67\n134\nF1 Grenades\n1\n59\n182\n993\n1986\nDoors require half the amounts."
+        },
+        {
+            "title": "Projectile Weapons",
+            "content": "Not much is known about the effect of projectiles on the health of structures. A detailed damage list can be found here: Damage Table\nHowever, this we do know: \nTwig and Wood structures are on the weaker side to begin with, but instead of using projectiles it is probably better just to use melee weapons/tools.\nExplosive 5.56 Rifle Ammo does greater damage to Sheet Metal and Armored tier structures than typical 5.56 or pistol rounds, although it is still rather inefficient compared to explosives.\nA High Velocity Arrow fired from a Crossbow is capable of penetrating through structures of any building tier (except for Stone). This allows someone to shoot a person through a wall, for instance. The arrow cannot penetrate more than one structure.\nMechanics\nAttack\nDamage Types \u2022 Projectiles\nEnvironment\nAnimals \u2022 Barrels \u2022 Biomes \u2022 Flora \u2022 Loot Crates \u2022 Monuments \u2022 Rocks \u2022 Trees\nGameplay\nAttack Helicopter \u2022 Airdrops \u2022 Building \u2022 Combat \u2022 Crafting \u2022 Gathering \u2022 Raiding \u2022 Repairing \u2022 Researching\nPlayer\nFood & Hunger \u2022 Health \u2022 Hydration & Thirst \u2022 Protection \u2022 Sleeping \u2022 Spawning\nXP System\nExperience \u2022 Skill Tree \u2022 Tech Tree\nStatus Effects\nBleeding \u2022 Building Privilege \u2022 Comfort \u2022 Injured \u2022 Poisoning \u2022 Radiation \u2022 Starvation & Dehydration \u2022 Warmth \u2022 Wet & Drowning \u2022 Wounded"
+        }
+    ]
+}

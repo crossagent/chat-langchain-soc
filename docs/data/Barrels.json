@@ -1,0 +1,32 @@
+{
+    "title": "Barrels",
+    "content": "Barrels are hollow, metal, cylindrical containers and a type of destructible world object found in Experimental Rust. They typically contain low-tier components, 1 scrap and resources, which drop on the ground after the barrel has been demolished. 4 different types of Barrels exist. Spawn locations vary from areas in and around Monuments to Roads to Junk Piles, and usually depend on the Barrel's type. For all types of barrels, there is a chance that no loot may spawn after a player demolishes them. (More so with the Oil Barrel)",
+    "sections": [
+        {
+            "title": "Standard Barrel",
+            "content": " \nThese unmarked, rust coated Barrels are the most ubiquitous ones and can be found at every Monument, alongside Roads and at Junk Piles. They spawn with 35 Health points and contain items like 1 scrap and components ranging from Wood to other low-tier components."
+        },
+        {
+            "title": "Biohazard Barrel",
+            "content": " \nThis Barrel is a blue, bio-hazard re-skin of the Standard Barrel and as such it inherits the Standard Barrel's properties, except that it has 50 Health points."
+        },
+        {
+            "title": "Oil Barrel",
+            "content": " \nRather than containing Items, red Oil Barrels will drop a small amount of Crude Oil, and Low Grade Fuel when destroyed. Oil Barrels have 50 Health point and can be found underneath the Sphere Tank, inside the Lighthouse, in the outermost Hangar at the Airfield and at random trash piles.\nNote: There is an Oil Refinery at both the Sphere Tank and Airfield, allowing for refining acquired Crude Oil on the spot."
+        },
+        {
+            "title": "Deleted content",
+            "content": "",
+            "sections": [
+                {
+                    "title": "Trash Can",
+                    "content": " \nTrash cans were a derivative of the Standard Barrel, the only differences being the changed world model and skin, reduced Health points to 35 and lower-tiered loot tables. They were commonly found around the Sphere Tank and Airfield and acted like a strandard barrel that can drop medical supplies like apples and anti-radiation pills."
+                }
+            ]
+        },
+        {
+            "title": "Barrel Loot",
+            "content": "Note: The List below is incomplete. Add newly discovered loot drops accordingly. (Out of Date)\nPossible loot from barrels include:\n(All barrels) Scrap\nCrude Oil\nEmpty Propane Tank\nGears\nMetal Blade\nMetal Fragments\nMetal Pipe\nMetal Spring\nRoad Signs\nRope\nSemi Automatic Body\nSewing Kit\nSheet Metal\nTarp\nWood\nLow Grade Fuel\nMechanics\nAttack\nDamage Types \u2022 Projectiles\nEnvironment\nAnimals \u2022 Barrels \u2022 Biomes \u2022 Flora \u2022 Loot Crates \u2022 Monuments \u2022 Rocks \u2022 Trees\nGameplay\nAttack Helicopter \u2022 Airdrops \u2022 Building \u2022 Combat \u2022 Crafting \u2022 Gathering \u2022 Raiding \u2022 Repairing \u2022 Researching\nPlayer\nFood & Hunger \u2022 Health \u2022 Hydration & Thirst \u2022 Protection \u2022 Sleeping \u2022 Spawning\nXP System\nExperience \u2022 Skill Tree \u2022 Tech Tree\nStatus Effects\nBleeding \u2022 Building Privilege \u2022 Comfort \u2022 Injured \u2022 Poisoning \u2022 Radiation \u2022 Starvation & Dehydration \u2022 Warmth \u2022 Wet & Drowning \u2022 Wounded"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "title": "Boar",
+    "content": "Boars can be found all around Rust. Like other animals, they can be killed and will yield a decent amount of Pork and Cloth. They can be quite aggressive if approached as of Devblog 155. However they will usually try to flee from the location where it was attacked even though they can't outrun players. They are one of the easiest preys for food. Boars will take 5 strikes with the beginning rock weapon or 1-2 shots from a bow.",
+    "sections": [
+        {
+            "title": "Produces",
+            "content": "When harvested with a Bone Knife or Hatchet, a boar will yield:\n39-41 Animal fat\n49-51 Bone Fragments\n10 Cloth\n20 Leather\n8 Pork"
+        }
+    ]
+}

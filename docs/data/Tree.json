@@ -1,0 +1,35 @@
+{
+    "title": "Tree",
+    "content": "\u2014Information accurate as of: 1159 Update\nTrees are naturally occurring world objects in Rust. Players can harvest trees for Wood using any gathering tool such as a Rock, Hatchet, or Pickaxe. Harvested wood is added to the player inventory and can be used for Crafting various items or as fuel for Camp Fires and Furnaces. \nThe amount of wood harvested from trees is generally proportional to its size and type. Large trees can be harvested for around 650 wood, depending on the tool used. When all of a tree's wood is harvested, the tree falls, giving the player an amount of wood higher than before. However, if only some wood is harvested and the tree is left for a few days, the wood will be replenished.",
+    "sections": [
+        {
+            "title": "Harvesting - Tools:",
+            "sections": [
+                {
+                    "title": "Harvesting - Tools:",
+                    "content": "Tool\nWood Per Strike\nWood Per Tree\nWood Before Breaking\nRock\n10\n500\n3,000\nStone Pick Axe\n5\n~300\n~100\nBone Club\n9\n309 - 557 \n?\nPick Axe\n10\n?\n420\nSalvaged Icepick\n10\n?\n~130\nSalvaged Hammer\n15\n?\n1,125\nStone Hatchet\n20\n420 - 770 \n1700\nHatchet\n30\n459 - 835 \n7000\nSalvaged Axe\n50\n550 - 1000 \n6,829"
+                },
+                {
+                    "title": "Harvesting - Tree Types (11/01/2017):",
+                    "content": "Pine 1 Trees.Pine 2 Trees.Pine 3 Trees.Pine 4 Trees.Pine 5 Trees.Dry Pine Trees.Palm Trees.Big Dry Trees.Small Dry Trees."
+                }
+            ]
+        },
+        {
+            "title": "Driftwood",
+            "content": " \nBeach Biomes had Driftwood from early on.However, Driftwood was only made a harvest-able Wood Resource with Devblog 167. They provide the same amount of Wood per hit as a Fallen Log. "
+        },
+        {
+            "title": "Legacy Version",
+            "content": "Although plentiful in the landscape, trees were not the fastest way of obtaining Wood in Legacy. Wood Piles were a much better alternative as they allowed players to gather Wood more quickly. However, when Wood Piles were scarce (and the player only needed a small amount of wood to craft a Wood Shelter or Camp Fire), then Trees were fine. If the player used a Pick Axe on the tree, they could get 2 Wood per hit. In contrast with Experimental Rust, trees in Legacy did not despawn after being fully harvested, and players would see a message stating 'There's no wood left here' if they attempted to continue gathering from it."
+        },
+        {
+            "title": "Gallery",
+            "content": "One of the many trees forming a forest along the coast. (Legacy)A tree being harvested for Wood. (Legacy)A Wood Pile. These may be harvested in a manner much similar to that of a tree. (Legacy)Several examples of the trees that were present throughout the map. (Legacy)Two pine trees which spawned unusually close together. (Experimental)The 'There's no wood left here' notification. (Legacy)"
+        },
+        {
+            "title": "Bugs",
+            "content": "Some trees have been seen to be generated inside buildings.\nWooden and Metal Building Parts can be placed inside trees so the tree goes through their house"
+        }
+    ]
+}
