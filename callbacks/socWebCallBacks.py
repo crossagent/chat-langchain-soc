@@ -14,9 +14,11 @@ class StreamingSocLLMCallbackHandler(AsyncCallbackHandler):
         self.websocket = websocket
 
     async def on_llm_new_token(self, token: str, **kwargs: Any) -> None:
-        resp = ChatResponse(sender="bot", message=token, type="stream")
-        await self.websocket.send_json(resp.dict())
-
+        if (self.websocket):
+            resp = ChatResponse(sender="bot", message=token, type="stream")
+            await self.websocket.send_json(resp.dict())
+        else:
+            print(token)
 
 class StreamSocLLMCallbackHandler(BaseCallbackHandler):
     """Callback handler for streaming LLM responses."""
@@ -25,8 +27,11 @@ class StreamSocLLMCallbackHandler(BaseCallbackHandler):
         self.websocket = websocket
 
     def on_llm_new_token(self, token: str, **kwargs: Any) -> None:
-        resp = ChatResponse(sender="bot", message=token, type="stream")
-        asyncio.run(self.websocket.send_json(resp.dict()))
+        if (self.websocket):        
+            resp = ChatResponse(sender="bot", message=token, type="stream")
+            asyncio.run(self.websocket.send_json(resp.dict()))
+        else:
+            print(token)    
 
 class ChainSocCallbackHandler(BaseCallbackHandler):
     """Callback handler for streaming LLM responses."""
