@@ -99,6 +99,33 @@ class QuestionGenSocCallbackHandler(AsyncCallbackHandler):
         )
         await self.websocket.send_json(resp.dict())
 
+class QuestionRephSocCallbackHandler(BaseCallbackHandler):
+    """Callback handler for question generation."""
+
+    def __init__(self, websocket):
+        self.websocket = websocket
+
+    def on_chain_start(
+        self,
+        serialized: Dict[str, Any],
+        inputs: Dict[str, Any],
+        **kwargs: Any,
+    ) -> None:
+        """Run when LLM starts running."""
+        # 首先结束当前的对话
+        end_resp = ChatResponse(sender="bot", message="", type="end")
+        asyncio.run(self.websocket.send_json(end_resp.dict())) 
+
+        # 开启一个新的对话说明结果
+        start_resp = ChatResponse(sender="bot", message="", type="start")
+        asyncio.run(self.websocket.send_json(start_resp.dict()))
+
+        # 发送最终的询问结果
+        #result_resp = ChatResponse(sender="bot", message=speak_field, type="stream")
+        #asyncio.run(self.websocket.send_json(result_resp.dict()))
+
+        # 结束对话
+        asyncio.run(self.websocket.send_json(end_resp.dict()))     
 
 class ToolUseCallbackkHandler(BaseCallbackHandler):
 

@@ -49,7 +49,8 @@ from langchain.tools.base import BaseTool
 from langchain.tools.human.tool import HumanInputRun
 from langchain.vectorstores.base import VectorStoreRetriever
 from langchain.chains.llm import LLMChain
-    
+from chains.soc_question_generate import QuestionGenerateChain
+
 class RustServerGPT:
     """Agent class for interacting with Auto-GPT."""
 
@@ -179,10 +180,15 @@ class RustServerGPT:
                     humanNewInput = True
                 
             self.memory.add_documents([Document(page_content=memory_to_add)])
-            self.chat_history_memory.add_message(SystemMessage(content=result))
+            self.chat_history_memory.add_message(AIMessage(content=result))
 
             if humanNewInput:
-                self.chat_history_memory.add_message(HumanMessage(content=feedback))
+                question_rephrase_chain = QuestionGenerateChain.from_llm(self.chain.llm, verbose = True)
+                question_rephrase_chain.full_memory = self.chat_history_memory
+
+                final_question = question_rephrase_chain.run(question = feedback)
+                
+                self.chat_history_memory.add_message(HumanMessage(content=final_question))
 
 
 from tools.WebHumanInputRun import WebHumanInputRun, CallForHumanCallbackHandler
@@ -200,7 +206,6 @@ def get_rust_server_cmd_gpt(
     llm = ChatOpenAI(model_name="gpt-4", temperature=0, streaming=True, callback_manager = steam_manager)
 
     websocket = kwargs['websocket']
-
 
     llm_lookup = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613", verbose= True)
     qa_manager = WebSearchCallbackHandler(websocket)
