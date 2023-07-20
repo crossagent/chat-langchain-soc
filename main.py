@@ -83,11 +83,13 @@ async def websocket_endpoint_soc(websocket: WebSocket):
 
     print("run chatsoc")
 
-    stream_handler = StreamSocLLMCallbackHandler(websocket)
-
+    # stream_handler = StreamSocLLMCallbackHandler(websocket)
+    # config = {"stream_handler" : stream_handler, "websocket" : websocket}
+    # soc_agent = get_rust_server_cmd_gpt(**config)
     #soc_agent from chat.py
-    config = {"stream_handler" : stream_handler, "websocket" : websocket}
-    soc_agent = get_rust_server_cmd_gpt(**config)
+    from chat import get_web_front_desk_agent
+
+    soc_agent = get_web_front_desk_agent(websocket)
 
     while True:
         try:

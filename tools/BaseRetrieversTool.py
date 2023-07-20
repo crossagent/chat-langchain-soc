@@ -178,7 +178,7 @@ categories = [
 class RustWikiTool(BaseTool):
     name = "RustWiki"
     description = (
-        f"useful when you need to search imformation about rust game, the category in args can only be selected from the following type:{','.join(categories)}."
+        f"useful when you need to search imformation about rust game, the question in args should be in English, the category in args can only be selected from the following type:{','.join(categories)}."
     )
     summary_chain: BaseCombineDocumentsChain
 
@@ -194,8 +194,12 @@ class RustWikiTool(BaseTool):
         from langchain.vectorstores import FAISS
         db = FAISS.load_local("faiss_index", embeddings)
 
-        final_question = question + f"分类属于{'.'.join(category)}"
+        final_question = question + f" the categroy of question is {'.'.join(category)}"
 
+        from colorama import Fore, Back, Style
+        print(Fore.YELLOW +final_question)
+        print(Style.RESET_ALL)
+              
         docs = db.similarity_search_with_score(final_question, k=4)
 
         # 获取每个 doc 的 page_content 并连接在一起
@@ -230,7 +234,8 @@ class RustWikiTool(BaseTool):
             Document(page_content=content_text, metadata={"source": metadata_text})
         ]
 
-        print(results_docs)
+        print(Back.GREEN + results_docs[0].page_content)
+        print(Back.RESET)
 
         return self.summary_chain(
             {"input_documents": results_docs, "question": question},
@@ -239,42 +244,19 @@ class RustWikiTool(BaseTool):
 
     async def _arun(self, url: str, question: str) -> str:
         raise NotImplementedError    
-    
-
-class BuildingTool(RustWikiTool):
-    name = "buildingTool"
-    description = (
-        "information about building,include cagerate about Gameplay, Mechanics, Building, and EXPLOSIVE AMMO"
-    )
-
-class EnvironmentTool(RustWikiTool):
-    name = "EnvironmentTool"
-    description = (
-        "information about building,include cagerate about Gameplay, Mechanics, Building, and EXPLOSIVE AMMO"
-    )
-
-class MechanicsTool(RustWikiTool):
-    name = "MechanicsTool"
-    description = (
-        "information about building,include cagerate about Gameplay, Mechanics, Building, and EXPLOSIVE AMMO"
-    )
-
-class SystemTool(RustWikiTool):
-    name = "SystemTool"
-    description = (
-        "information about building,include cagerate about Gameplay, Mechanics, Building, and EXPLOSIVE AMMO"
-    )    
 
 if __name__ == "__main__":
-    ingest()
+    #ingest()
     from langchain.chat_models import ChatOpenAI 
-    llm_lookup = ChatOpenAI(temperature=0, model="gpt-4")
 
-    summary_chain = load_qa_with_sources_chain(llm_lookup)
+    llm_summary = ChatOpenAI(temperature=0, model="gpt-4")
+    from prompts.summary_prompt import PROMPT as SUMMARY_PROMPT
+    summary_config = {"prompt" : SUMMARY_PROMPT}
+    summary_chain = load_qa_with_sources_chain(llm_summary, verbose = True, **summary_config)
 
-    buildTool = BuildingTool(summary_chain = summary_chain)
+    buildTool = RustWikiTool(summary_chain = summary_chain)
 
-    input = {"question": "我第一天干什么"}
+    input = {"question": "我应该怎么建房子", "category": ["Gameplay", "Building"]}
     observation = buildTool.run(input)
-    print(observation)
+    print(observation['output_text'])
 

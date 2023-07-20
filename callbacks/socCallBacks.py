@@ -155,21 +155,21 @@ class ToolUseCallbackkHandler(BaseCallbackHandler):
             end_resp = ChatResponse(sender="bot", message="", type="end")
             asyncio.run(self.websocket.send_json(end_resp.dict())) 
 
-            # 开启一个新的对话说明问题
-            start_resp = ChatResponse(sender="bot", message="", type="start")
-            asyncio.run(self.websocket.send_json(start_resp.dict()))
+            # # 开启一个新的对话说明问题
+            # start_resp = ChatResponse(sender="bot", message="", type="start")
+            # asyncio.run(self.websocket.send_json(start_resp.dict()))
 
-            # 发送最终的询问结果
-            eval_input = eval(input_str)
+            # # 发送最终的询问结果
+            # eval_input = eval(input_str)
 
-            result_resp = ChatResponse(sender="bot", message=f"从网络搜索提问：{eval_input['question']}", type="stream")
-            asyncio.run(self.websocket.send_json(result_resp.dict()))
+            # result_resp = ChatResponse(sender="bot", message=f"从网络搜索提问：{eval_input['question']}", type="stream")
+            # asyncio.run(self.websocket.send_json(result_resp.dict()))
 
-            asyncio.run(self.websocket.send_json(end_resp.dict())) 
+            # asyncio.run(self.websocket.send_json(end_resp.dict())) 
 
-            # 开启一个新的对话说明结果
-            start_resp = ChatResponse(sender="bot", message="", type="start")
-            asyncio.run(self.websocket.send_json(start_resp.dict()))
+            # # 开启一个新的对话说明结果
+            # start_resp = ChatResponse(sender="bot", message="", type="start")
+            # asyncio.run(self.websocket.send_json(start_resp.dict()))
         else:
             print(input_str)
 
@@ -180,9 +180,9 @@ class ToolUseCallbackkHandler(BaseCallbackHandler):
     ) -> None:
         """Run when tool ends running."""
         if self.websocket:
-            # 首先结束当前的对话
+            # # 首先结束当前的对话
             end_resp = ChatResponse(sender="bot", message="", type="end")
-            asyncio.run(self.websocket.send_json(end_resp.dict())) 
+            # asyncio.run(self.websocket.send_json(end_resp.dict())) 
 
             data = eval(output)
 
