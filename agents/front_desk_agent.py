@@ -91,7 +91,7 @@ class FrontDestAgent:
             ai_role=ai_role,
             tools=tools,
             #categories=[""],
-            input_variables=["memory", "messages", "goals", "user_input", "categories"],
+            input_variables=["memory", "messages", "goals", "user_input"],
             token_counter=llm.get_num_tokens,
         )
         human_feedback_tool = HumanInputRun() if human_in_the_loop else None
@@ -200,13 +200,13 @@ def get_front_dest_agent(
     # init llm
     steam_manager = BaseCallbackManager([kwargs['stream_handler']])
 
-    #llm = ChatOpenAI(model_name="gpt-4", temperature=0, streaming=True, callback_manager = steam_manager)
-    llm = ChatOpenAI(model_name="gpt-4", temperature=0, streaming=False)
+    llm = ChatOpenAI(model_name="gpt-4", temperature=0, streaming=True, callback_manager = steam_manager)
+    #llm = ChatOpenAI(model_name="gpt-4", temperature=0, streaming=False)
 
     llm_summary = ChatOpenAI(temperature=0, model="gpt-4")
     from prompts.summary_prompt import PROMPT as SUMMARY_PROMPT
     summary_config = {"prompt" : SUMMARY_PROMPT}
-    summary_chain = load_qa_with_sources_chain(llm_summary, **summary_config)
+    summary_chain = load_qa_with_sources_chain(llm_summary, **summary_config, verbose=True)
 
     rust_tools_manager = BaseCallbackManager([kwargs['rust_tool_handler']])
     query_rust_tool = RustWikiTool(summary_chain = summary_chain, callback_manager = rust_tools_manager, verbose = True)
