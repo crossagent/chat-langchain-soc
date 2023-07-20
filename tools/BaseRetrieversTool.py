@@ -70,12 +70,121 @@ def ingest():
 def getToolCategory():
     pass
 
-class BaseRetrievesTool(BaseTool):
-    
-    qa_chain: BaseCombineDocumentsChain
+from pydantic import BaseModel, Field
+from typing import List, Optional, Type
+class RustWikiInput(BaseModel):
+    question: str = Field()
+    category: List[str] = Field()
+
+
+categories = [
+    "Ammunition",
+    "Animal",
+    "Appliances",
+    "Armor",
+    "Article management templates",
+    "Article stubs",
+    "Articles for Deletion",
+    "BlogListingPage",
+    "Blog posts",
+    "Boots",
+    "Candidates for deletion",
+    "Candidates for speedy deletion",
+    "Category templates",
+    "Clothes",
+    "Collectibles",
+    "Community",
+    "Construction",
+    "Consumables",
+    "Copyright",
+    "Cosmetic",
+    "Damage Types",
+    "Deployable",
+    "Disambiguations",
+    "Door",
+    "Environment",
+    "Experimental Content",
+    "Experimental Icons",
+    "Explosives",
+    "Files",
+    "Forums",
+    "Fuel",
+    "Gameplay",
+    "General wiki templates",
+    "Guides",
+    "Guides (Legacy)",
+    "Guns",
+    "Help",
+    "Help desk",
+    "Hidden categories",
+    "Icons",
+    "Image needed",
+    "Image wiki templates",
+    "In-Game Event",
+    "In-game Settings",
+    "Incendiary",
+    "Incomplete Data",
+    "Infobox templates",
+    "Items",
+    "Jacket",
+    "Legacy",
+    "Legacy Icons",
+    "Legacy Items",
+    "Legacy Redirects",
+    "Light Source",
+    "Loot",
+    "Maps",
+    "Mechanics",
+    "Medical",
+    "Monuments",
+    "Mutated",
+    "NPC",
+    "New pages",
+    "Organization",
+    "Pages proposed for deletion",
+    "Pages with broken file link",
+    "Pages with broken file links",
+    "Passive Animal",
+    "Policy",
+    "Ranged Weapon",
+    "Redirect",
+    "Removed features",
+    "Resource Collection",
+    "Rust",
+    "Rust Wiki",
+    "Seasonal",
+    "Shoes",
+    "Site administration",
+    "Site maintenance",
+    "Status Effects",
+    "Structure",
+    "T-Shirt",
+    "Talking",
+    "Template documentation",
+    "Template icons",
+    "Templates",
+    "Throwable Weapon",
+    "Tools",
+    "Trap",
+    "Unreleased Content",
+    "Videos",
+    "Water Container",
+    "Weapon Mods",
+    "Weapons",
+    "Window",
+    "XP System"
+]
+
+class RustWikiTool(BaseTool):
+    name = "RustWiki"
+    description = (
+        f"useful when you need to search imformation about rust game, the category in args can only be selected from the following type:{','.join(categories)}."
+    )
     summary_chain: BaseCombineDocumentsChain
 
-    def _run(self, question: str) -> str:
+    args_schema:Type[BaseModel] = RustWikiInput
+
+    def _run(self, question: str, category: List[str]) -> str:
         """Useful for browsing websites and scraping the text information."""
 
         # TODO：使用向量数据库来预先分拣最相似的片段
@@ -85,7 +194,9 @@ class BaseRetrievesTool(BaseTool):
         from langchain.vectorstores import FAISS
         db = FAISS.load_local("faiss_index", embeddings)
 
-        docs = db.similarity_search_with_score(question, k=4)
+        final_question = question + f"分类属于{'.'.join(category)}"
+
+        docs = db.similarity_search_with_score(final_question, k=4)
 
         # 获取每个 doc 的 page_content 并连接在一起
         content_text = ""
@@ -130,39 +241,38 @@ class BaseRetrievesTool(BaseTool):
         raise NotImplementedError    
     
 
-class BuildingTool(BaseRetrievesTool):
+class BuildingTool(RustWikiTool):
     name = "buildingTool"
     description = (
         "information about building,include cagerate about Gameplay, Mechanics, Building, and EXPLOSIVE AMMO"
     )
 
-class EnvironmentTool(BaseRetrievesTool):
+class EnvironmentTool(RustWikiTool):
     name = "EnvironmentTool"
     description = (
         "information about building,include cagerate about Gameplay, Mechanics, Building, and EXPLOSIVE AMMO"
     )
 
-class MechanicsTool(BaseRetrievesTool):
+class MechanicsTool(RustWikiTool):
     name = "MechanicsTool"
     description = (
         "information about building,include cagerate about Gameplay, Mechanics, Building, and EXPLOSIVE AMMO"
     )
 
-class SystemTool(BaseRetrievesTool):
+class SystemTool(RustWikiTool):
     name = "SystemTool"
     description = (
         "information about building,include cagerate about Gameplay, Mechanics, Building, and EXPLOSIVE AMMO"
     )    
 
 if __name__ == "__main__":
-    #ingest()
+    ingest()
     from langchain.chat_models import ChatOpenAI 
     llm_lookup = ChatOpenAI(temperature=0, model="gpt-4")
 
-    qa_chain= load_qa_with_sources_chain(llm_lookup)
     summary_chain = load_qa_with_sources_chain(llm_lookup)
 
-    buildTool = BuildingTool(qa_chain = qa_chain, summary_chain = summary_chain)
+    buildTool = BuildingTool(summary_chain = summary_chain)
 
     input = {"question": "我第一天干什么"}
     observation = buildTool.run(input)

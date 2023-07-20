@@ -193,7 +193,7 @@ class RustServerGPT:
 
 from tools.WebHumanInputRun import WebHumanInputRun, CallForHumanCallbackHandler
 from tools.ServerCmdSearchTool import SeverGmCmdTool,load_qa_with_sources_chain
-from callbacks.socWebCallBacks import ToolUseCallbackkHandler, WebSearchCallbackHandler, ChainSocCallbackHandler
+from callbacks.socCallBacks import ToolUseCallbackkHandler, WebSearchCallbackHandler, ChainSocCallbackHandler
 
 def get_rust_server_cmd_gpt(
     verbose: bool = False,
@@ -242,7 +242,7 @@ def get_rust_server_cmd_gpt(
 
    
 if __name__ == "__main__":
-    from callbacks.socConsoleCallBacks import StreamLLMCallbackHandler
+    from callbacks.socCallBacks import StreamLLMCallbackHandler
 
     stream_handler = StreamLLMCallbackHandler()
 

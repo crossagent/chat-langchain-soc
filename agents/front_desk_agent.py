@@ -90,6 +90,7 @@ class FrontDestAgent:
             ai_name=ai_name,
             ai_role=ai_role,
             tools=tools,
+            #categories=[""],
             input_variables=["memory", "messages", "goals", "user_input", "categories"],
             token_counter=llm.get_num_tokens,
         )
@@ -125,6 +126,7 @@ class FrontDestAgent:
                 messages=self.chat_history_memory.messages,
                 memory=self.memory,
                 user_input=user_input,
+                categories=[""],
             )
 
             # Print Assistant thoughts
@@ -138,7 +140,7 @@ class FrontDestAgent:
             if action.name == FINISH_NAME:
                 #return action.args["response"]
                 #结束的时候不直接返回，等待用户决策
-                pass
+                result = f"Command {action.name} returned: {action.args['response']}"
             if action.name in tools:
                 tool = tools[action.name]
                 try:
@@ -187,7 +189,8 @@ class FrontDestAgent:
 
 from tools.WebHumanInputRun import WebHumanInputRun, CallForHumanCallbackHandler
 from tools.ServerCmdSearchTool import SeverGmCmdTool,load_qa_with_sources_chain
-from callbacks.socWebCallBacks import ToolUseCallbackkHandler, WebSearchCallbackHandler, ChainSocCallbackHandler
+from callbacks.socCallBacks import ToolUseCallbackkHandler, WebSearchCallbackHandler, ChainSocCallbackHandler
+from tools.BaseRetrieversTool import RustWikiTool
 
 def get_front_dest_agent(
     verbose: bool = False,
@@ -197,54 +200,55 @@ def get_front_dest_agent(
     # init llm
     steam_manager = BaseCallbackManager([kwargs['stream_handler']])
 
-    llm = ChatOpenAI(model_name="gpt-4", temperature=0, streaming=True, callback_manager = steam_manager)
-
-    websocket = kwargs['websocket']
-
-
-    llm_lookup = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613", verbose= True)
-    qa_manager = WebSearchCallbackHandler(websocket)
-
-    from prompts.search_prompt import PROMPT as SEARCH_PROMPT
-    qa_config = {"callbacks" : [qa_manager], "prompt" : SEARCH_PROMPT}
-    qa_chain= load_qa_with_sources_chain(llm_lookup, **qa_config)
+    #llm = ChatOpenAI(model_name="gpt-4", temperature=0, streaming=True, callback_manager = steam_manager)
+    llm = ChatOpenAI(model_name="gpt-4", temperature=0, streaming=False)
 
     llm_summary = ChatOpenAI(temperature=0, model="gpt-4")
     from prompts.summary_prompt import PROMPT as SUMMARY_PROMPT
     summary_config = {"prompt" : SUMMARY_PROMPT}
     summary_chain = load_qa_with_sources_chain(llm_summary, **summary_config)
 
-    query_rust_tool = SeverGmCmdTool(qa_chain = qa_chain, summary_chain = summary_chain, callbacks = [ToolUseCallbackkHandler(websocket)], verbose = True)
+    rust_tools_manager = BaseCallbackManager([kwargs['rust_tool_handler']])
+    query_rust_tool = RustWikiTool(summary_chain = summary_chain, callback_manager = rust_tools_manager, verbose = True)
 
     tools = [
         query_rust_tool,
         #human_input_tool, # Activate if you want the permit asking for help from the human
     ]    
 
-    agent = RustServerGPT.from_llm_and_tools(
+    agent = FrontDestAgent.from_llm_and_tools(
         ai_name="Tom",
         ai_role="Assistant",
         tools=tools,
         llm=llm,
         memory=vectorstore.as_retriever(search_kwargs={"k": 8}),
         human_in_the_loop=True, # Set to True if you want to add feedback at each step.
-        callbacks = [ChainSocCallbackHandler(websocket)],
+        callbacks = [kwargs['agent_hander']],
     )
-    agent.feedback_tool = WebHumanInputRun(websocket)
+    agent.feedback_tool = kwargs['feedback_tool']
     agent.chain.verbose = True
 
     return agent
 
    
 if __name__ == "__main__":
-    from callbacks.socConsoleCallBacks import StreamLLMCallbackHandler
+    from callbacks.socCallBacks import StreamSocLLMCallbackHandler, ChainSocCallbackHandler, ToolUseCallbackkHandler
 
-    stream_handler = StreamLLMCallbackHandler()
+
+    stream_handler = StreamSocLLMCallbackHandler()
+    input_run = HumanInputRun()
+    tool_handler = ToolUseCallbackkHandler()
+    agent_hander = ChainSocCallbackHandler()
 
     #soc_agent from chat.py
-    config = {"stream_handler" : stream_handler}
-    soc_agent = get_rust_server_cmd_gpt(**config)
+    config = {"stream_handler" : stream_handler, "feedback_tool": input_run, "rust_tool_handler":tool_handler, "agent_hander":agent_hander}
+    soc_agent = get_front_dest_agent(**config)
 
-    asyncio.run(soc_agent.arun(["如何查看自己的位置"], count=5))
+
+    print("输入你的问题：")
+    input = input()
+    asyncio.run(soc_agent.arun([input], count=5))
+
+    
 
     

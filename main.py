@@ -8,7 +8,7 @@ from fastapi.templating import Jinja2Templates
 from langchain.vectorstores import VectorStore
 
 from callbacks.callback import QuestionGenCallbackHandler, StreamingLLMCallbackHandler
-from callbacks.socWebCallBacks import StreamSocLLMCallbackHandler
+from callbacks.socCallBacks import StreamSocLLMCallbackHandler
 from query_data import get_chain
 from schemas import ChatResponse
 

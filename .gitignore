@@ -137,3 +137,5 @@ dmypy.json
 
 vectorstore.pkl
 langchain.readthedocs.io/
+/faiss_index/index.faiss
+/faiss_index/index.pkl
